@@ -1,13 +1,61 @@
 package com.yhw.wan.coreapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 
-public class ExampleActivity extends AppCompatActivity {
+import com.yhw.wan.core.activities.ProxyActivity;
+import com.yhw.wan.core.app.Core;
+import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.module.main.EcBottomDelegate;
+import com.yhw.wan.ui.launcher.ILauncherListener;
+import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
+
+import qiu.niorgai.StatusBarCompat;
+
+public class ExampleActivity extends ProxyActivity implements
+        ILauncherListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+        Core.getConfigurator().withActivity(this);
+        StatusBarCompat.translucentStatusBar(this, true);
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public CoreDelegate setRootDelegate() {
+        return new EcBottomDelegate();
+    }
+
+    @Override
+    public void onLauncherFinish(OnLauncherFinishTag tag) {
+        switch (tag) {
+            case SIGNED:
+//                Toast.makeText(this, "启动结束，用户登录了", Toast.LENGTH_LONG).show();
+//                getSupportDelegate().startWithPop(new EcBottomDelegate());
+                break;
+            case NOT_SIGNED:
+//                Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
+//                getSupportDelegate().startWithPop(new SignInDelegate());
+                break;
+            default:
+                break;
+        }
     }
 }

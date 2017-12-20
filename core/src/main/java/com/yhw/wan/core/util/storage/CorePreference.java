@@ -11,7 +11,7 @@ import com.yhw.wan.core.app.Core;
  * Created by 傅令杰 on 2017/4/22
  */
 
-public final class LattePreference {
+public final class CorePreference {
 
     /**
      * 提示:
@@ -31,7 +31,7 @@ public final class LattePreference {
         getAppPreference()
                 .edit()
                 .putString(APP_PREFERENCES_KEY, val)
-                .commit();
+                .apply();
     }
 
     public static String getAppProfile() {
@@ -47,21 +47,21 @@ public final class LattePreference {
         getAppPreference()
                 .edit()
                 .remove(APP_PREFERENCES_KEY)
-                .commit();
+                .apply();
     }
 
     public static void clearAppPreferences() {
         getAppPreference()
                 .edit()
                 .clear()
-                .commit();
+                .apply();
     }
 
     public static void setAppFlag(String key, boolean flag) {
         getAppPreference()
                 .edit()
                 .putBoolean(key, flag)
-                .commit();
+                .apply();
     }
 
     public static boolean getAppFlag(String key) {
@@ -73,7 +73,7 @@ public final class LattePreference {
         getAppPreference()
                 .edit()
                 .putString(key, val)
-                .commit();
+                .apply();
     }
 
     public static String getCustomAppProfile(String key) {
