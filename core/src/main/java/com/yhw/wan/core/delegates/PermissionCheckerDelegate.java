@@ -8,6 +8,21 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
+import com.yalantis.ucrop.UCrop;
+import com.yhw.wan.core.ui.camera.CameraImageBean;
+import com.yhw.wan.core.ui.camera.CoreCamera;
+import com.yhw.wan.core.ui.camera.RequestCodes;
+import com.yhw.wan.core.util.callback.CallbackManager;
+import com.yhw.wan.core.util.callback.CallbackType;
+import com.yhw.wan.core.util.callback.IGlobalCallback;
+
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
+
 
 /**
  * Created by 傅令杰 on 2017/4/2
@@ -19,7 +34,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
     //不是直接调用方法
     @NeedsPermission(Manifest.permission.CAMERA)
     void startCamera() {
-        LatteCamera.start(this);
+        CoreCamera.start(this);
     }
 
     //这个是真正调用的方法
@@ -30,7 +45,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
     //扫描二维码(不直接调用)
     @NeedsPermission(Manifest.permission.CAMERA)
     void startScan(BaseDelegate delegate) {
-        delegate.getSupportDelegate().startForResult(new ScannerDelegate(), RequestCodes.SCAN);
+//        delegate.getSupportDelegate().startForResult(new ScannerDelegate(), RequestCodes.SCAN);
     }
 
     public void startScanWithCheck(BaseDelegate delegate) {
@@ -92,7 +107,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                     if (data != null) {
                         final Uri pickPath = data.getData();
                         //从相册选择后需要有个路径存放剪裁过的图片
-                        final String pickCropPath = LatteCamera.createCropFile().getPath();
+                        final String pickCropPath = CoreCamera.createCropFile().getPath();
                         UCrop.of(pickPath, Uri.parse(pickCropPath))
                                 .withMaxResultSize(400, 400)
                                 .start(getContext(), this);

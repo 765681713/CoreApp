@@ -3,8 +3,9 @@ package com.yhw.wan.core.delegates.web.event;
 import android.content.Context;
 import android.webkit.WebView;
 
-import com.flj.latte.delegates.LatteDelegate;
-import com.flj.latte.delegates.web.WebDelegate;
+import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.core.delegates.web.WebDelegate;
+
 
 /**
  * Created by 傅令杰
@@ -37,7 +38,7 @@ public abstract class Event implements IEvent {
         this.mAction = mAction;
     }
 
-    public LatteDelegate getDelegate() {
+    public CoreDelegate getDelegate() {
         return mDelegate;
     }
 

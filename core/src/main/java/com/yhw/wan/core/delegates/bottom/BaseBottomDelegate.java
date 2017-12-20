@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.joanzapata.iconify.widget.IconTextView;
 import com.yhw.wan.core.R;
+import com.yhw.wan.core.R2;
 import com.yhw.wan.core.delegates.CoreDelegate;
 
 import java.util.ArrayList;

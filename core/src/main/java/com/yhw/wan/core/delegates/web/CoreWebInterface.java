@@ -3,23 +3,23 @@ package com.yhw.wan.core.delegates.web;
 import android.webkit.JavascriptInterface;
 
 import com.alibaba.fastjson.JSON;
-import com.flj.latte.delegates.web.event.Event;
-import com.flj.latte.delegates.web.event.EventManager;
-import com.flj.latte.util.log.LatteLogger;
+import com.yhw.wan.core.delegates.web.event.Event;
+import com.yhw.wan.core.delegates.web.event.EventManager;
+import com.yhw.wan.core.util.log.LatteLogger;
 
 /**
  * Created by 傅令杰
  */
 
-final class LatteWebInterface {
+final class CoreWebInterface {
     private final WebDelegate DELEGATE;
 
-    private LatteWebInterface(WebDelegate delegate) {
+    private CoreWebInterface(WebDelegate delegate) {
         this.DELEGATE = delegate;
     }
 
-    static LatteWebInterface create(WebDelegate delegate) {
-        return new LatteWebInterface(delegate);
+    static CoreWebInterface create(WebDelegate delegate) {
+        return new CoreWebInterface(delegate);
     }
 
     @SuppressWarnings("unused")

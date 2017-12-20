@@ -2,15 +2,16 @@ package com.yhw.wan.core.ui.camera;
 
 import android.net.Uri;
 
-import com.flj.latte.delegates.PermissionCheckerDelegate;
-import com.flj.latte.util.file.FileUtil;
+import com.yhw.wan.core.delegates.PermissionCheckerDelegate;
+import com.yhw.wan.core.util.file.FileUtil;
+
 
 /**
  * Created by 傅令杰
  * 照相机调用类
  */
 
-public class LatteCamera {
+public class CoreCamera {
 
     public static Uri createCropFile() {
         return Uri.parse

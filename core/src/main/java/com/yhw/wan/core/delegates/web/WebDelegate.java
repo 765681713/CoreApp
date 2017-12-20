@@ -53,7 +53,7 @@ public abstract class WebDelegate extends CoreDelegate implements IWebViewInitia
                 mWebView.setWebViewClient(initializer.initWebViewClient());
                 mWebView.setWebChromeClient(initializer.initWebChromeClient());
                 final String name = Core.getConfiguration(ConfigKeys.JAVASCRIPT_INTERFACE);
-                mWebView.addJavascriptInterface(LatteWebInterface.create(this), name);
+                mWebView.addJavascriptInterface(CoreWebInterface.create(this), name);
                 mIsWebViewAvailable = true;
             } else {
                 throw new NullPointerException("Initializer is null!");

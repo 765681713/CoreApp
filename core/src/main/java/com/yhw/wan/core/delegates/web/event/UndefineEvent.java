@@ -1,6 +1,7 @@
 package com.yhw.wan.core.delegates.web.event;
 
-import com.flj.latte.util.log.LatteLogger;
+
+import com.yhw.wan.core.util.log.LatteLogger;
 
 /**
  * Created by 傅令杰

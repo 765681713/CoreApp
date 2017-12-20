@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ContentFrameLayout;
 
 
+import com.yhw.wan.core.R;
 import com.yhw.wan.core.delegates.CoreDelegate;
 
 import me.yokeyword.fragmentation.ExtraTransaction;

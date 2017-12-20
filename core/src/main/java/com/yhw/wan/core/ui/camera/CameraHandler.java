@@ -14,9 +14,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.blankj.utilcode.util.FileUtils;
-import com.diabin.latte.R;
-import com.flj.latte.delegates.PermissionCheckerDelegate;
-import com.flj.latte.util.file.FileUtil;
+import com.yhw.wan.core.R;
+import com.yhw.wan.core.delegates.PermissionCheckerDelegate;
+import com.yhw.wan.core.util.file.FileUtil;
 
 import java.io.File;
 
