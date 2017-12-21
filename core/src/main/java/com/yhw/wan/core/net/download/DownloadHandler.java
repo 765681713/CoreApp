@@ -1,7 +1,7 @@
 package com.yhw.wan.core.net.download;
 
 import android.os.AsyncTask;
-
+import android.support.annotation.NonNull;
 
 import com.yhw.wan.core.net.RestCreator;
 import com.yhw.wan.core.net.callback.IError;
@@ -23,7 +23,7 @@ import retrofit2.Response;
 public final class DownloadHandler {
 
     private final String URL;
-    private static final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
+    private final WeakHashMap<String, Object> PARAMS;
     private final IRequest REQUEST;
     private final String DOWNLOAD_DIR;
     private final String EXTENSION;
@@ -33,6 +33,7 @@ public final class DownloadHandler {
     private final IError ERROR;
 
     public DownloadHandler(String url,
+                           WeakHashMap<String, Object> params,
                            IRequest request,
                            String downDir,
                            String extension,
@@ -41,6 +42,7 @@ public final class DownloadHandler {
                            IFailure failure,
                            IError error) {
         this.URL = url;
+        this.PARAMS = params;
         this.REQUEST = request;
         this.DOWNLOAD_DIR = downDir;
         this.EXTENSION = extension;
@@ -60,7 +62,7 @@ public final class DownloadHandler {
                 .download(URL, PARAMS)
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                         if (response.isSuccessful()) {
                             final ResponseBody responseBody = response.body();
                             final SaveFileTask task = new SaveFileTask(REQUEST, SUCCESS);
@@ -78,14 +80,12 @@ public final class DownloadHandler {
                                 ERROR.onError(response.code(), response.message());
                             }
                         }
-                        RestCreator.getParams().clear();
                     }
 
                     @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                         if (FAILURE != null) {
                             FAILURE.onFailure();
-                            RestCreator.getParams().clear();
                         }
                     }
                 });

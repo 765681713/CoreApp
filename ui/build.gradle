@@ -28,7 +28,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //RecyclerView依赖
     compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     //RecyclerView 分割线
     compile 'com.choices.divider:RecyclerView_Divider:1.0.0'
     //图片处理
