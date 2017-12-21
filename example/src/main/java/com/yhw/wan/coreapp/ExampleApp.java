@@ -1,15 +1,11 @@
 package com.yhw.wan.coreapp;
 
 
-import android.support.annotation.Nullable;
 import android.support.multidex.MultiDexApplication;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.net.interceptors.DebugInterceptor;
-import com.yhw.wan.core.util.callback.CallbackManager;
-import com.yhw.wan.core.util.callback.CallbackType;
-import com.yhw.wan.core.util.callback.IGlobalCallback;
 import com.yhw.wan.coreapp.event.ShareEvent;
 import com.yhw.wan.coreapp.event.TestEvent;
 import com.yhw.wan.module.icon.FontEcModule;
@@ -27,7 +23,7 @@ public class ExampleApp extends MultiDexApplication {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withLoaderDelayed(1000)
-                .withApiHost("你的本地服务器地址")
+                .withApiHost("http://www.yhw.wan.com")
                 .withInterceptor(new DebugInterceptor("test", R.raw.test))
                 .withWeChatAppId("你的微信AppKey")
                 .withWeChatAppSecret("你的微信AppSecret")
@@ -38,18 +34,18 @@ public class ExampleApp extends MultiDexApplication {
 //        initStetho();
 //        DatabaseManager.getInstance().init(this);
 
-        CallbackManager.getInstance()
-                .addCallback(CallbackType.TAG_OPEN_PUSH, new IGlobalCallback() {
-                    @Override
-                    public void executeCallback(@Nullable Object args) {
-
-                    }
-                })
-                .addCallback(CallbackType.TAG_STOP_PUSH, new IGlobalCallback() {
-                    @Override
-                    public void executeCallback(@Nullable Object args) {
-
-                    }
-                });
+//        CallbackManager.getInstance()
+//                .addCallback(CallbackType.TAG_OPEN_PUSH, new IGlobalCallback() {
+//                    @Override
+//                    public void executeCallback(@Nullable Object args) {
+//
+//                    }
+//                })
+//                .addCallback(CallbackType.TAG_STOP_PUSH, new IGlobalCallback() {
+//                    @Override
+//                    public void executeCallback(@Nullable Object args) {
+//
+//                    }
+//                });
     }
 }

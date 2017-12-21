@@ -1,7 +1,7 @@
 package com.yhw.wan.core.delegates.web.event;
 
 
-import com.yhw.wan.core.util.log.LatteLogger;
+import com.yhw.wan.core.util.log.CoreLogger;
 
 /**
  * Created by 傅令杰
@@ -10,7 +10,7 @@ import com.yhw.wan.core.util.log.LatteLogger;
 public class UndefineEvent extends Event {
     @Override
     public String execute(String params) {
-        LatteLogger.e("UndefineEvent", params);
+        CoreLogger.e("UndefineEvent", params);
         return null;
     }
 }

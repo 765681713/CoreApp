@@ -10,7 +10,7 @@ import com.yhw.wan.core.delegates.IPageLoadListener;
 import com.yhw.wan.core.delegates.web.WebDelegate;
 import com.yhw.wan.core.delegates.web.route.Router;
 import com.yhw.wan.core.ui.loader.CoreLoader;
-import com.yhw.wan.core.util.log.LatteLogger;
+import com.yhw.wan.core.util.log.CoreLogger;
 
 /**
  * Created by 傅令杰
@@ -32,7 +32,7 @@ public class WebViewClientImpl extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        LatteLogger.d("shouldOverrideUrlLoading", url);
+        CoreLogger.d("shouldOverrideUrlLoading", url);
         return Router.getInstance().handleWebUrl(DELEGATE, url);
     }
 

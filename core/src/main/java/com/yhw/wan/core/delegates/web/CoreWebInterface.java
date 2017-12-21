@@ -5,7 +5,7 @@ import android.webkit.JavascriptInterface;
 import com.alibaba.fastjson.JSON;
 import com.yhw.wan.core.delegates.web.event.Event;
 import com.yhw.wan.core.delegates.web.event.EventManager;
-import com.yhw.wan.core.util.log.LatteLogger;
+import com.yhw.wan.core.util.log.CoreLogger;
 
 /**
  * Created by 傅令杰
@@ -27,7 +27,7 @@ final class CoreWebInterface {
     public String event(String params) {
         final String action = JSON.parseObject(params).getString("action");
         final Event event = EventManager.getInstance().createEvent(action);
-        LatteLogger.d("WEB_EVENT",params);
+        CoreLogger.d("WEB_EVENT",params);
         if (event != null) {
             event.setAction(action);
             event.setDelegate(DELEGATE);

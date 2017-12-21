@@ -3,8 +3,8 @@ package com.yhw.wan.core.net.interceptors;
 import android.support.annotation.NonNull;
 import android.support.annotation.RawRes;
 
-
 import com.yhw.wan.core.util.file.FileUtil;
+import com.yhw.wan.core.util.log.CoreLogger;
 
 import java.io.IOException;
 
@@ -46,6 +46,7 @@ public class DebugInterceptor extends BaseInterceptor {
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         final String url = chain.request().url().toString();
+        CoreLogger.w("DebugInterceptor", url);
         if (url.contains(DEBUG_URL)) {
             return debugResponse(chain, DEBUG_RAW_ID);
         }

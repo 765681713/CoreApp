@@ -1,6 +1,7 @@
 package com.yhw.wan.core.app;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
@@ -49,7 +50,7 @@ public final class Configurator {
         initIcons();
         Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
-        Utils.init(Core.getApplicationContext());
+        Utils.init((Application) Core.getApplicationContext());
     }
 
     public final Configurator withApiHost(String host) {

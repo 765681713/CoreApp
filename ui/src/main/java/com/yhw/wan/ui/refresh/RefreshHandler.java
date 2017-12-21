@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.net.RestClient;
 import com.yhw.wan.core.net.callback.ISuccess;
-import com.yhw.wan.core.util.log.LatteLogger;
+import com.yhw.wan.core.util.log.CoreLogger;
 import com.yhw.wan.ui.recycler.DataConverter;
 import com.yhw.wan.ui.recycler.MultipleRecyclerAdapter;
 
@@ -91,7 +91,7 @@ public class RefreshHandler implements
                             .success(new ISuccess() {
                                 @Override
                                 public void onSuccess(String response) {
-                                    LatteLogger.json("paging", response);
+                                    CoreLogger.json("paging", response);
                                     CONVERTER.clearData();
                                     mAdapter.addData(CONVERTER.setJsonData(response).convert());
                                     //累加数量

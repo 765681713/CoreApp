@@ -69,7 +69,6 @@ public final class RequestCallbacks implements Callback<String> {
             HANDLER.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    RestCreator.getParams().clear();
                     CoreLoader.stopLoading();
                 }
             }, delayed);
