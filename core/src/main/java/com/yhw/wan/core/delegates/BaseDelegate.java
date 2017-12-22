@@ -96,7 +96,7 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
         backView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressedSupport();
+                getSupportDelegate().pop();
             }
         });
         hideTitleBar();

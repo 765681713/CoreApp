@@ -64,22 +64,21 @@ public class Delegate1 extends BottomItemDelegate {
         mRefreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
             @Override
             public void onRefresh(TwinklingRefreshLayout refreshLayout) {
-
+                mRefreshLayout.finishRefreshing();
             }
 
             @Override
             public void onLoadMore(TwinklingRefreshLayout refreshLayout) {
-
+                mRefreshLayout.finishLoadmore();
             }
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.addItemDecoration(BaseDecoration.create(
-                ContextCompat.getColor(getContext(),
-                        R.color.app_background), 5));
+                ContextCompat.getColor(getContext(), R.color.app_background), 2));
         mRecyclerView.addOnItemTouchListener(new RecyclerItemListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                getSupportDelegate().start(new SettingDelegate());
+                getParentDelegate().getSupportDelegate().start(new SettingDelegate());
             }
         });
         mAdapter = new Delegate1Adapter(datas);

@@ -24,7 +24,7 @@ public class ExampleActivity extends ProxyActivity implements
             actionBar.hide();
         }
         Core.getConfigurator().withActivity(this);
-        StatusBarCompat.translucentStatusBar(this, true);
+        StatusBarCompat.translucentStatusBar(this, false);
 //        EventBus.getDefault().register(this);
     }
 
