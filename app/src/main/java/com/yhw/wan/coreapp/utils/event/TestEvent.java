@@ -1,4 +1,4 @@
-package com.yhw.wan.coreapp.event;
+package com.yhw.wan.coreapp.utils.event;
 
 import android.webkit.WebView;
 import android.widget.Toast;

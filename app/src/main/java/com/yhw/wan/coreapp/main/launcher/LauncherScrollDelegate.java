@@ -1,4 +1,4 @@
-package com.yhw.wan.coreapp.launcher;
+package com.yhw.wan.coreapp.main.launcher;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,8 +11,10 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.core.util.storage.CorePreference;
 import com.yhw.wan.coreapp.R;
+import com.yhw.wan.coreapp.main.EcBottomDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.LauncherHolderCreator;
+import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
 import com.yhw.wan.ui.launcher.ScrollLauncherTag;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class LauncherScrollDelegate extends CoreDelegate implements OnItemClickL
     private ILauncherListener mILauncherListener = null;
 
     private void initBanner() {
+        INTEGERS.clear();
         INTEGERS.add(R.mipmap.launcher_01);
         INTEGERS.add(R.mipmap.launcher_02);
         INTEGERS.add(R.mipmap.launcher_03);
@@ -66,7 +69,10 @@ public class LauncherScrollDelegate extends CoreDelegate implements OnItemClickL
         if (position == INTEGERS.size() - 1) {
             CorePreference.setAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name(), true);
             //检查用户是否已经登录
-
+            getSupportDelegate().start(new EcBottomDelegate(), SINGLETASK);
+            if (mILauncherListener != null) {
+                mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+            }
         }
     }
 }

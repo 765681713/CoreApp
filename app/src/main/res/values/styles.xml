@@ -12,4 +12,16 @@
         <item name="android:overScrollMode">never</item>
     </style>
 
+    <!-- alpha 进出动画 -->
+    <style name="AlphaAnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!-- slide 进出动画 -->
+    <style name="SlideAnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
 </resources>

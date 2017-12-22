@@ -1,4 +1,4 @@
-package com.yhw.wan.coreapp.icon;
+package com.yhw.wan.coreapp.utils.icon;
 
 import com.joanzapata.iconify.Icon;
 import com.joanzapata.iconify.IconFontDescriptor;

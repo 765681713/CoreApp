@@ -1,4 +1,4 @@
-package com.yhw.wan.coreapp.main.delegates;
+package com.yhw.wan.coreapp.main.setting;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,16 +12,17 @@ import com.yhw.wan.coreapp.R;
  * Created by jieku02 on 2017/12/21.
  */
 
-public class Delegate2 extends BottomItemDelegate {
+public class SettingDelegate extends BottomItemDelegate {
 
     @Override
     public Object setLayout() {
-        return R.layout.delegate_layout_2;
+        return R.layout.delegate_setting_layout;
     }
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
-        hideTitleBar();
+        showTitleBar();
+
     }
-    
+
 }

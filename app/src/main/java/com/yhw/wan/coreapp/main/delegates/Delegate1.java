@@ -17,6 +17,8 @@ import com.yhw.wan.core.net.rx.RxRestClient;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.adapter.Delegate1Adapter;
 import com.yhw.wan.coreapp.adapter.Delegate1Converter;
+import com.yhw.wan.coreapp.common.Constants;
+import com.yhw.wan.coreapp.main.setting.SettingDelegate;
 import com.yhw.wan.ui.recycler.BaseDecoration;
 import com.yhw.wan.ui.recycler.MultipleItemEntity;
 import com.yhw.wan.ui.recycler.RecyclerItemListener;
@@ -41,6 +43,8 @@ public class Delegate1 extends BottomItemDelegate {
     RecyclerView mRecyclerView = null;
 
     private ArrayList<MultipleItemEntity> datas;
+    private Delegate1Adapter mAdapter;
+    private int mCount = 1;
 
     @Override
     public Object setLayout() {
@@ -49,9 +53,9 @@ public class Delegate1 extends BottomItemDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
-//        mRefreshLayout = rootView.findViewById(R.id.refresh_layout);
-//        mRecyclerView = rootView.findViewById(R.id.recycler_view);
-
+        showTitleBar();
+        hideLeftBtn();
+        setTitle("Delegate1");
         datas = new ArrayList<>();
         ProgressLayout headerView = new ProgressLayout(getContext());
         mRefreshLayout.setHeaderView(headerView);
@@ -75,12 +79,19 @@ public class Delegate1 extends BottomItemDelegate {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+                getSupportDelegate().start(new SettingDelegate());
             }
         });
-        mRecyclerView.setAdapter(new Delegate1Adapter(datas));
+        mAdapter = new Delegate1Adapter(datas);
+        mRecyclerView.setAdapter(mAdapter);
 
-        RxRestClient.builder().url("/test.php")
+
+        loadData();
+    }
+
+    private void loadData() {
+        RxRestClient.builder().url(Constants.TEST)
+                .params(Constants.PAGE, mCount)
                 .build()
                 .get()
                 .subscribeOn(Schedulers.io())
@@ -89,6 +100,7 @@ public class Delegate1 extends BottomItemDelegate {
                     @Override
                     public void accept(String s) throws Exception {
                         datas.addAll(new Delegate1Converter().setJsonData(s).convert());
+                        mAdapter.notifyDataSetChanged();
                     }
                 }, new Consumer<Throwable>() {
                     @Override
@@ -96,7 +108,6 @@ public class Delegate1 extends BottomItemDelegate {
                         throwable.printStackTrace();
                     }
                 });
-
     }
 
 }

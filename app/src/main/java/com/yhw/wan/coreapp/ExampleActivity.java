@@ -7,12 +7,9 @@ import android.support.v7.app.ActionBar;
 import com.yhw.wan.core.activities.ProxyActivity;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.delegates.CoreDelegate;
-import com.yhw.wan.coreapp.main.EcBottomDelegate;
+import com.yhw.wan.coreapp.main.launcher.LauncherDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import qiu.niorgai.StatusBarCompat;
 
@@ -43,7 +40,7 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public CoreDelegate setRootDelegate() {
-        return new EcBottomDelegate();
+        return new LauncherDelegate();
     }
 
     @Override
@@ -62,8 +59,4 @@ public class ExampleActivity extends ProxyActivity implements
         }
     }
 
-    @Subscribe
-    public void fuc(){
-
-    }
 }

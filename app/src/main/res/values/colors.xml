@@ -8,4 +8,41 @@
     <color name="item_background">#F1F1F1</color>
     <color name="app_main">@android:color/holo_orange_dark</color>
 
+
+    <!--v2 常用颜色-->
+    <color name="color_ffffff">#ffffffff</color>
+    <color name="color_000000">#ff000000</color>
+    <color name="color_dddddd">#ffdddddd</color>
+    <color name="color_999999">#ff999999</color>
+    <color name="color_666666">#ff666666</color>
+    <color name="color_777777">#ff777777</color>
+    <color name="color_d7d7d7">#ffd7d7d7</color>
+    <color name="color_b7b7b7">#ffb7b7b7</color>
+    <color name="color_333333">#ff333333</color>
+    <color name="color_515151">#ff515151</color>
+    <color name="color_f1f1f1">#fff1f1f1</color>
+    <color name="color_d8d8d8">#ffd8d8d8</color>
+    <color name="color_c8c8c8">#ffc8c8c8</color>
+    <color name="color_fe67ba">#fffe67ba</color>
+    <color name="color_ff3191">#ffff3191</color>
+    <color name="color_83c3fc">#ff83c3fc</color>
+    <color name="color_ffc6dc">#ffffc6dc</color>
+    <color name="color_ff50b0">#ffff50b0</color>
+    <color name="color_86d93a">#ff86d93a</color>
+    <color name="color_a4a4a4">#ffa4a4a4</color>
+    <color name="color_ECECEC">#ffececec</color>
+    <color name="color_efeef4">#ffefeef4</color>
+    <color name="color_55fe67ba">#55fe67ba</color>
+    <color name="color_1cb8f2">#ff1cb8f2</color>
+    <color name="color_12b7f5">#ff12b7f5</color>
+    <color name="color_939393">#ff939393</color>
+    <color name="color_bbbbbb">#ffbbbbbb</color>
+    <color name="color_757575">#ff757575</color>
+    <color name="color_55757575">#55757575</color>
+    <color name="color_44000000">#44000000</color>
+    <color name="color_99000000">#99000000</color>
+    <color name="color_B0000000">#B0000000</color>
+    <color name="color_55000000">#55000000</color>
+    <color name="color_ffa7d8">#ffffa7d8</color>
+
 </resources>
