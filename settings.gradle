@@ -1,1 +1,1 @@
-include ':example', ':core', ':ui', ':module'
+include ':app', ':core', ':ui'
