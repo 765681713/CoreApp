@@ -29,7 +29,7 @@ import permissions.dispatcher.RuntimePermissions;
  */
 
 @RuntimePermissions
-public abstract class PermissionCheckerDelegate extends BaseDelegate {
+public abstract class PermissionDelegate extends BaseDelegate {
 
     //不是直接调用方法
     @NeedsPermission(Manifest.permission.CAMERA)
@@ -39,7 +39,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
 
     //这个是真正调用的方法
     public void startCameraWithCheck() {
-        PermissionCheckerDelegatePermissionsDispatcher.startCameraWithCheck(this);
+        PermissionDelegatePermissionsDispatcher.startCameraWithCheck(this);
     }
 
     //扫描二维码(不直接调用)
@@ -49,7 +49,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
     }
 
     public void startScanWithCheck(BaseDelegate delegate) {
-        PermissionCheckerDelegatePermissionsDispatcher.startScanWithCheck(this, delegate);
+        PermissionDelegatePermissionsDispatcher.startScanWithCheck(this, delegate);
     }
 
     @OnPermissionDenied(Manifest.permission.CAMERA)
@@ -89,7 +89,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionCheckerDelegatePermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        PermissionDelegatePermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
     @Override
@@ -116,8 +116,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                 case RequestCodes.CROP_PHOTO:
                     final Uri cropUri = UCrop.getOutput(data);
                     //拿到剪裁后的数据进行处理
-                    @SuppressWarnings("unchecked")
-                    final IGlobalCallback<Uri> callback = CallbackManager
+                    @SuppressWarnings("unchecked") final IGlobalCallback<Uri> callback = CallbackManager
                             .getInstance()
                             .getCallback(CallbackType.ON_CROP);
                     if (callback != null) {
@@ -131,5 +130,10 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                     break;
             }
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T extends CoreDelegate> T getParentDelegate() {
+        return (T) getParentFragment();
     }
 }

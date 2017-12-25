@@ -81,7 +81,7 @@ public class Delegate1 extends BottomItemDelegate {
                 getParentDelegate().getSupportDelegate().start(new SettingDelegate());
             }
         });
-        mAdapter = new Delegate1Adapter(datas);
+        mAdapter = Delegate1Adapter.create(datas);
         mRecyclerView.setAdapter(mAdapter);
 
 

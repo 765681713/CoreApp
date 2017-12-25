@@ -2,7 +2,7 @@ package com.yhw.wan.core.ui.camera;
 
 import android.net.Uri;
 
-import com.yhw.wan.core.delegates.PermissionCheckerDelegate;
+import com.yhw.wan.core.delegates.PermissionDelegate;
 import com.yhw.wan.core.util.file.FileUtil;
 
 
@@ -19,7 +19,7 @@ public class CoreCamera {
                         FileUtil.getFileNameByTime("IMG", "jpg")).getPath());
     }
 
-    public static void start(PermissionCheckerDelegate delegate) {
+    public static void start(PermissionDelegate delegate) {
         new CameraHandler(delegate).beginCameraDialog();
     }
 }

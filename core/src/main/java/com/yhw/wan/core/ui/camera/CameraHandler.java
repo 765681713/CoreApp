@@ -15,7 +15,7 @@ import android.view.WindowManager;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.yhw.wan.core.R;
-import com.yhw.wan.core.delegates.PermissionCheckerDelegate;
+import com.yhw.wan.core.delegates.PermissionDelegate;
 import com.yhw.wan.core.util.file.FileUtil;
 
 import java.io.File;
@@ -28,9 +28,9 @@ import java.io.File;
 public class CameraHandler implements View.OnClickListener {
 
     private final AlertDialog DIALOG;
-    private final PermissionCheckerDelegate DELEGATE;
+    private final PermissionDelegate DELEGATE;
 
-    public CameraHandler(PermissionCheckerDelegate delegate) {
+    public CameraHandler(PermissionDelegate delegate) {
         this.DELEGATE = delegate;
         DIALOG = new AlertDialog.Builder(delegate.getContext()).create();
     }

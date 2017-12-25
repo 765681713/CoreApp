@@ -1,10 +1,10 @@
 package com.yhw.wan.coreapp.adapter;
 
-import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.ui.recycler.ItemType;
 import com.yhw.wan.ui.recycler.MultipleFields;
 import com.yhw.wan.ui.recycler.MultipleItemEntity;
+import com.yhw.wan.ui.recycler.MultipleRecyclerAdapter;
 import com.yhw.wan.ui.recycler.MultipleViewHolder;
 
 import java.util.List;
@@ -13,15 +13,20 @@ import java.util.List;
  * Created by jieku02 on 2017/12/21.
  */
 
-public class Delegate1Adapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, MultipleViewHolder> {
+public class Delegate1Adapter extends MultipleRecyclerAdapter {
 
+    public static Delegate1Adapter create(List<MultipleItemEntity> data) {
+        return new Delegate1Adapter(data);
+    }
 
-    public Delegate1Adapter(List<MultipleItemEntity> data) {
+    private Delegate1Adapter(List<MultipleItemEntity> data) {
         super(data);
+    }
+
+    @Override
+    protected void addType() {
         addItemType(ItemType.TEXT, R.layout.item_multiple_text);
-        openLoadAnimation();
-        //多次执行动画
-        isFirstOnly(false);
+
     }
 
     @Override

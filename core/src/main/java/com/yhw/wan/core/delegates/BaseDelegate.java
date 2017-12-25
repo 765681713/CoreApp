@@ -128,6 +128,10 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
         backView.setVisibility(View.GONE);
     }
 
+    public void showLeftBtn(){
+        backView.setVisibility(View.VISIBLE);
+    }
+
     public void hideTitleBar() {
         if (baseView != null) {
             baseView.findViewById(R.id.base_title_layout).setVisibility(View.GONE);
