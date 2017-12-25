@@ -26,11 +26,10 @@ public class Delegate1Converter extends DataConverter {
                 final JSONArray dataArray = jsonObject.getJSONArray("data");
                 final int size = dataArray.size();
                 for (int i = 0; i < size; i++) {
-                    final JSONObject data = dataArray.getJSONObject(i);
-                    final String key = data.getString("key" + (i + 1));
+                    final String data = dataArray.getString(i);
                     final MultipleItemEntity entity = MultipleItemEntity.builder()
                             .setItemType(ItemType.TEXT)
-                            .setField(MultipleFields.KEY, key)
+                            .setField(MultipleFields.KEY, data)
                             .build();
                     ENTITIES.add(entity);
                 }

@@ -33,7 +33,7 @@ public class Delegate1Adapter extends MultipleRecyclerAdapter {
     protected void convert(MultipleViewHolder holder, MultipleItemEntity entity) {
         switch (holder.getItemViewType()) {
             case ItemType.TEXT:
-                String text = entity.getField(MultipleFields.KEY);
+                String text = String.format("{fa-%s}", entity.getField(MultipleFields.KEY));
                 holder.setText(R.id.text_single, text);
                 break;
         }

@@ -48,7 +48,6 @@ public abstract class RefreshListDelegate extends CoreDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         hideTitleBar();
-        hideLeftBtn();
         datas = new ArrayList<>();
         ProgressLayout headerView = new ProgressLayout(getContext());
         mRefreshLayout.setHeaderView(headerView);

@@ -33,7 +33,7 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     //RecyclerView 分割线
     compile 'com.choices.divider:RecyclerView_Divider:1.0.0'
-    //图片处理
+    //图片处理(升级后会出错)
     compile 'com.github.bumptech.glide:glide:4.0.0'
     compile 'com.github.bumptech.glide:okhttp3-integration:4.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
