@@ -1,4 +1,4 @@
-package com.yhw.wan.core.util.dimen;
+package com.yhw.wan.core.utils;
 
 import android.content.res.Resources;
 import android.util.DisplayMetrics;

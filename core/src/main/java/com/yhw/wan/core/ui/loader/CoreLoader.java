@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 import com.wang.avi.AVLoadingIndicatorView;
 import com.yhw.wan.core.R;
-import com.yhw.wan.core.util.dimen.DimenUtil;
+import com.yhw.wan.core.utils.DimenUtil;
 
 import java.util.ArrayList;
 

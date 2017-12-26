@@ -12,9 +12,9 @@ import com.yalantis.ucrop.UCrop;
 import com.yhw.wan.core.ui.camera.CameraImageBean;
 import com.yhw.wan.core.ui.camera.CoreCamera;
 import com.yhw.wan.core.ui.camera.RequestCodes;
-import com.yhw.wan.core.util.callback.CallbackManager;
-import com.yhw.wan.core.util.callback.CallbackType;
-import com.yhw.wan.core.util.callback.IGlobalCallback;
+import com.yhw.wan.core.utils.callback.CallbackManager;
+import com.yhw.wan.core.utils.callback.CallbackType;
+import com.yhw.wan.core.utils.callback.IGlobalCallback;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;

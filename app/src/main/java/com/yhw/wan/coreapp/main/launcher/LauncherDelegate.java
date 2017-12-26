@@ -8,7 +8,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
 import com.yhw.wan.core.delegates.CoreDelegate;
-import com.yhw.wan.core.util.storage.CorePreference;
+import com.yhw.wan.core.app.CorePreference;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.main.EcBottomDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;

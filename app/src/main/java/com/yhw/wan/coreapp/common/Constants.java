@@ -10,6 +10,10 @@ public class Constants {
     public static final String TEST = "test.php";
 
 
+    public static final String ALI_PAY_URL = "";
+    public static final String WECHAT_PAY_URL = "";
+
+
 
 
     //params key

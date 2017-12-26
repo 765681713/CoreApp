@@ -16,7 +16,7 @@ import android.view.WindowManager;
 import com.blankj.utilcode.util.FileUtils;
 import com.yhw.wan.core.R;
 import com.yhw.wan.core.delegates.PermissionDelegate;
-import com.yhw.wan.core.util.file.FileUtil;
+import com.yhw.wan.core.utils.FileUtil;
 
 import java.io.File;
 

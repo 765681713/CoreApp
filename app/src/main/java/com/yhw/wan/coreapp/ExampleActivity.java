@@ -25,7 +25,10 @@ public class ExampleActivity extends ProxyActivity implements
         }
         Core.getConfigurator().withActivity(this);
         StatusBarCompat.translucentStatusBar(this, false);
+
+//        CoreGreenDao.getInstance().getDaoSession().getUserProfileDao()
 //        EventBus.getDefault().register(this);
+//        GlideApp
     }
 
     @Override

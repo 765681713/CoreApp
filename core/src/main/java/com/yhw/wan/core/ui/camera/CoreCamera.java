@@ -3,7 +3,7 @@ package com.yhw.wan.core.ui.camera;
 import android.net.Uri;
 
 import com.yhw.wan.core.delegates.PermissionDelegate;
-import com.yhw.wan.core.util.file.FileUtil;
+import com.yhw.wan.core.utils.FileUtil;
 
 
 /**

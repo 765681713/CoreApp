@@ -1,4 +1,4 @@
-package com.yhw.wan.core.util.storage;
+package com.yhw.wan.core.app;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

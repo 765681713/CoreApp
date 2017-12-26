@@ -1,4 +1,4 @@
-package com.yhw.wan.core.util.file;
+package com.yhw.wan.core.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;

@@ -1,14 +1,7 @@
-package com.yhw.wan.coreapp.pay;
+package com.yhw.wan.core.pay;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.view.Gravity;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -16,67 +9,35 @@ import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.yhw.wan.core.app.ConfigKeys;
 import com.yhw.wan.core.app.Core;
-import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.core.net.RestClient;
 import com.yhw.wan.core.net.callback.ISuccess;
 import com.yhw.wan.core.ui.loader.CoreLoader;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 import com.yhw.wan.core.wechat.CoreWeChat;
-import com.yhw.wan.coreapp.R;
 
 /**
  * Created by 傅令杰
  */
 
-public class Pay implements View.OnClickListener {
+public class CorePay {
 
     //设置支付回调监听
     private IAlPayResultListener mIAlPayResultListener = null;
-    private Activity mActivity = null;
 
-    private AlertDialog mDialog = null;
-    private int mOrderID = -1;
-
-    private Pay(CoreDelegate delegate) {
-        this.mActivity = delegate.getProxyActivity();
-        this.mDialog = new AlertDialog.Builder(delegate.getContext()).create();
+    private CorePay() {
     }
 
-    public static Pay create(CoreDelegate delegate) {
-        return new Pay(delegate);
+    public static CorePay create() {
+        return new CorePay();
     }
 
-    public void beginPayDialog() {
-        mDialog.show();
-        final Window window = mDialog.getWindow();
-        if (window != null) {
-            window.setContentView(R.layout.dialog_pay_panel);
-            window.setGravity(Gravity.BOTTOM);
-            window.setWindowAnimations(R.style.anim_panel_up_from_bottom);
-            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            //设置属性
-            final WindowManager.LayoutParams params = window.getAttributes();
-            params.width = WindowManager.LayoutParams.MATCH_PARENT;
-            params.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-            window.setAttributes(params);
-            window.findViewById(R.id.btn_dialog_pay_alpay).setOnClickListener(this);
-            window.findViewById(R.id.btn_dialog_pay_wechat).setOnClickListener(this);
-            window.findViewById(R.id.btn_dialog_pay_cancel).setOnClickListener(this);
-        }
-    }
-
-    public Pay setPayResultListener(IAlPayResultListener listener) {
+    public CorePay setPayResultListener(IAlPayResultListener listener) {
         this.mIAlPayResultListener = listener;
         return this;
     }
 
-    public Pay setOrderId(int orderId) {
-        this.mOrderID = orderId;
-        return this;
-    }
-
-    private void alPay(int orderId) {
-        final String singUrl = "你的服务端支付地址" + orderId;
+    public void alPay(final Activity mActivity, String alPayUrl, int orderId) {
+        final String singUrl = alPayUrl + orderId;
         //获取签名字符串
         RestClient.builder()
                 .url(singUrl)
@@ -94,9 +55,9 @@ public class Pay implements View.OnClickListener {
                 .post();
     }
 
-    private void weChatPay(int orderId) {
+    public void weChatPay(String weChatPayUrl, int orderId) {
         CoreLoader.stopLoading();
-        final String weChatPrePayUrl = "你的服务端微信预支付地址" + orderId;
+        final String weChatPrePayUrl = weChatPayUrl + orderId;
         CoreLogger.d("WX_PAY", weChatPrePayUrl);
 
         final IWXAPI iwxapi = CoreWeChat.getInstance().getWXAPI();
@@ -131,17 +92,4 @@ public class Pay implements View.OnClickListener {
                 .post();
     }
 
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.btn_dialog_pay_alpay) {
-            alPay(mOrderID);
-            mDialog.cancel();
-        } else if (id == R.id.btn_dialog_pay_wechat) {
-            weChatPay(mOrderID);
-            mDialog.cancel();
-        } else if (id == R.id.btn_dialog_pay_cancel) {
-            mDialog.cancel();
-        }
-    }
 }

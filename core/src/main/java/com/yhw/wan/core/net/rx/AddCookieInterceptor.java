@@ -3,7 +3,7 @@ package com.yhw.wan.core.net.rx;
 import android.support.annotation.NonNull;
 
 
-import com.yhw.wan.core.util.storage.CorePreference;
+import com.yhw.wan.core.app.CorePreference;
 
 import java.io.IOException;
 

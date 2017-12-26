@@ -1,4 +1,4 @@
-package com.yhw.wan.core.util.callback;
+package com.yhw.wan.core.utils.callback;
 
 import android.support.annotation.Nullable;
 

@@ -9,7 +9,7 @@ import com.yhw.wan.core.net.RestClient;
 import com.yhw.wan.core.net.callback.IError;
 import com.yhw.wan.core.net.callback.IFailure;
 import com.yhw.wan.core.net.callback.ISuccess;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 
 /**
  * Created by 傅令杰 on 2017/4/25

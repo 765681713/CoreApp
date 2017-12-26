@@ -1,4 +1,4 @@
-package com.yhw.wan.core.util.log;
+package com.yhw.wan.core.utils;
 
 import com.orhanobut.logger.Logger;
 

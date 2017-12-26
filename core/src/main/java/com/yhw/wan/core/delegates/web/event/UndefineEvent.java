@@ -1,7 +1,7 @@
 package com.yhw.wan.core.delegates.web.event;
 
 
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 
 /**
  * Created by 傅令杰

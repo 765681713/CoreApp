@@ -1,11 +1,11 @@
-package com.yhw.wan.coreapp.pay;
+package com.yhw.wan.core.pay;
 
 import android.app.Activity;
 import android.os.AsyncTask;
 
 import com.alipay.sdk.app.PayTask;
 import com.yhw.wan.core.ui.loader.CoreLoader;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 
 /**
  * Created by 傅令杰

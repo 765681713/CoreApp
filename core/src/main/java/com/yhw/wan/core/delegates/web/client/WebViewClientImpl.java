@@ -10,7 +10,7 @@ import com.yhw.wan.core.delegates.IPageLoadListener;
 import com.yhw.wan.core.delegates.web.WebDelegate;
 import com.yhw.wan.core.delegates.web.route.Router;
 import com.yhw.wan.core.ui.loader.CoreLoader;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 
 /**
  * Created by 傅令杰

@@ -8,7 +8,7 @@ import android.os.AsyncTask;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.net.callback.IRequest;
 import com.yhw.wan.core.net.callback.ISuccess;
-import com.yhw.wan.core.util.file.FileUtil;
+import com.yhw.wan.core.utils.FileUtil;
 
 import java.io.File;
 import java.io.InputStream;

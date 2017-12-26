@@ -3,7 +3,7 @@ package com.yhw.wan.coreapp.adapter;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.CoreLogger;
 import com.yhw.wan.ui.recycler.DataConverter;
 import com.yhw.wan.ui.recycler.ItemType;
 import com.yhw.wan.ui.recycler.MultipleFields;

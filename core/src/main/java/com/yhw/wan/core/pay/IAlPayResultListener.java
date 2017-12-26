@@ -1,4 +1,4 @@
-package com.yhw.wan.coreapp.pay;
+package com.yhw.wan.core.pay;
 
 /**
  * Created by 傅令杰

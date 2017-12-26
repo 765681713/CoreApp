@@ -9,7 +9,7 @@ import android.view.View;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.yhw.wan.core.delegates.CoreDelegate;
-import com.yhw.wan.core.util.storage.CorePreference;
+import com.yhw.wan.core.app.CorePreference;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.main.EcBottomDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;

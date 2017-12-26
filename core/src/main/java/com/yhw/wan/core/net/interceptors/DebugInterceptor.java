@@ -3,8 +3,8 @@ package com.yhw.wan.core.net.interceptors;
 import android.support.annotation.NonNull;
 import android.support.annotation.RawRes;
 
-import com.yhw.wan.core.util.file.FileUtil;
-import com.yhw.wan.core.util.log.CoreLogger;
+import com.yhw.wan.core.utils.FileUtil;
+import com.yhw.wan.core.utils.CoreLogger;
 
 import java.io.IOException;
 
