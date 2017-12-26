@@ -77,6 +77,8 @@ dependencies {
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
     //图片剪裁
     compile 'com.github.yalantis:ucrop:2.2.1-native'
+    //微信依赖（包含统计）
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.3.4'
     //二维码扫描
 //    compile 'me.dm7.barcodescanner:zbar:1.9.3'
 
