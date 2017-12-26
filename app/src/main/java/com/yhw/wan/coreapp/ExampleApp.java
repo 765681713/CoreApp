@@ -31,21 +31,6 @@ public class ExampleApp extends MultiDexApplication {
                 .withWebEvent("test", new TestEvent())
                 .withWebEvent("share", new ShareEvent())
                 .configure();
-//        initStetho();
-//        DatabaseManager.getInstance().init(this);
 
-//        CallbackManager.getInstance()
-//                .addCallback(CallbackType.TAG_OPEN_PUSH, new IGlobalCallback() {
-//                    @Override
-//                    public void executeCallback(@Nullable Object args) {
-//
-//                    }
-//                })
-//                .addCallback(CallbackType.TAG_STOP_PUSH, new IGlobalCallback() {
-//                    @Override
-//                    public void executeCallback(@Nullable Object args) {
-//
-//                    }
-//                });
     }
 }

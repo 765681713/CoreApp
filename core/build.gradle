@@ -40,9 +40,9 @@ dependencies {
     compile 'me.yokeyword:fragmentation:1.1.10'
     compile 'me.yokeyword:fragmentation-swipeback:1.1.10'
     // Activity作用域的EventBus，更安全，可有效避免after onSavenInstanceState()异常
-    compile 'me.yokeyword:eventbus-activity-scope:1.1.0'
-    //  EventBus's version
-    compile 'org.greenrobot:eventbus:3.1.1'
+    //compile 'me.yokeyword:eventbus-activity-scope:1.1.0'
+    //  EventBus's version(用RxBus 代替)
+    // compile 'org.greenrobot:eventbus:3.1.1'
     //字体图标
     compile 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
     compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
@@ -58,7 +58,7 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxjava:2.1.5'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     //数据库依赖
     compile 'org.greenrobot:greendao-generator:3.2.2'
     compile 'org.greenrobot:greendao:3.2.2'

@@ -24,15 +24,9 @@ public final class CoreLogger {
         }
     }
 
-    public static void d(String tag, Object message) {
+    public static void d(String tag, String message) {
         if (LEVEL <= DEBUG) {
             Logger.t(tag).d(message);
-        }
-    }
-
-    public static void d(Object message) {
-        if (LEVEL <= DEBUG) {
-            Logger.d(message);
         }
     }
 

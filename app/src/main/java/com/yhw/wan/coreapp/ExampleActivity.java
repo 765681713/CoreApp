@@ -7,14 +7,23 @@ import android.support.v7.app.ActionBar;
 import com.yhw.wan.core.activities.ProxyActivity;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.core.utils.CoreLogger;
 import com.yhw.wan.coreapp.main.launcher.LauncherDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
+import com.yhw.wan.ui.utils.RxBus;
+import com.yhw.wan.ui.utils.RxBusMsg;
 
+import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements
         ILauncherListener {
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +38,37 @@ public class ExampleActivity extends ProxyActivity implements
 //        CoreGreenDao.getInstance().getDaoSession().getUserProfileDao()
 //        EventBus.getDefault().register(this);
 //        GlideApp
+//        CallbackManager.getInstance()
+//                .addCallback(CallbackType.TAG_OPEN_PUSH, new IGlobalCallback() {
+//                    @Override
+//                    public void executeCallback(@Nullable Object args) {
+//
+//                    }
+//                })
+//                .addCallback(CallbackType.TAG_STOP_PUSH, new IGlobalCallback() {
+//                    @Override
+//                    public void executeCallback(@Nullable Object args) {
+//
+//                    }
+//                });
+        RxBus.getInstance().register()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<RxBusMsg>() {
+                    @Override
+                    public void accept(RxBusMsg msg) throws Exception {
+                        if (msg.getRequest() == RxBusMsg.REQUEST_ONE) {
+                            CoreLogger.i("ExampleActivity", msg + "");
+                        }
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        throwable.printStackTrace();
+                    }
+                });
+        RxBus.getInstance().post(
+                new RxBusMsg.Builder<String>(RxBusMsg.REQUEST_ONE)
+                        .data("REQUEST_ONE").msg("REQUEST_ONE").build());
     }
 
     @Override
@@ -61,5 +101,12 @@ public class ExampleActivity extends ProxyActivity implements
                 break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RxBus.getInstance().unregisterAll();
+    }
+
 
 }
