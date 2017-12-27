@@ -33,10 +33,8 @@ public class ExampleActivity extends ProxyActivity implements
             actionBar.hide();
         }
         Core.getConfigurator().withActivity(this);
-        StatusBarCompat.translucentStatusBar(this, false);
 
 //        CoreGreenDao.getInstance().getDaoSession().getUserProfileDao()
-//        EventBus.getDefault().register(this);
 //        GlideApp
 //        CallbackManager.getInstance()
 //                .addCallback(CallbackType.TAG_OPEN_PUSH, new IGlobalCallback() {
@@ -51,24 +49,24 @@ public class ExampleActivity extends ProxyActivity implements
 //
 //                    }
 //                });
-        RxBus.getInstance().register()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<RxBusMsg>() {
-                    @Override
-                    public void accept(RxBusMsg msg) throws Exception {
-                        if (msg.getRequest() == RxBusMsg.REQUEST_ONE) {
-                            CoreLogger.i("ExampleActivity", msg + "");
-                        }
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        throwable.printStackTrace();
-                    }
-                });
-        RxBus.getInstance().post(
-                new RxBusMsg.Builder<String>(RxBusMsg.REQUEST_ONE)
-                        .data("REQUEST_ONE").msg("REQUEST_ONE").build());
+//        RxBus.getInstance().register()
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Consumer<RxBusMsg>() {
+//                    @Override
+//                    public void accept(RxBusMsg msg) throws Exception {
+//                        if (msg.getRequest() == RxBusMsg.REQUEST_ONE) {
+//                            CoreLogger.i("ExampleActivity", msg + "");
+//                        }
+//                    }
+//                }, new Consumer<Throwable>() {
+//                    @Override
+//                    public void accept(Throwable throwable) throws Exception {
+//                        throwable.printStackTrace();
+//                    }
+//                });
+//        RxBus.getInstance().post(
+//                new RxBusMsg.Builder<String>(RxBusMsg.REQUEST_ONE)
+//                        .data("REQUEST_ONE").msg("REQUEST_ONE").build());
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +19,6 @@ import com.yhw.wan.core.R;
 import com.yhw.wan.core.R2;
 import com.yhw.wan.core.activities.ProxyActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
@@ -128,7 +128,7 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
         backView.setVisibility(View.GONE);
     }
 
-    public void showLeftBtn(){
+    public void showLeftBtn() {
         backView.setVisibility(View.VISIBLE);
     }
 
@@ -259,4 +259,65 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
     public boolean onBackPressedSupport() {
         return DELEGATE.onBackPressedSupport();
     }
+
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+        return DELEGATE.onCreateAnimation(transit, enter, nextAnim);
+    }
+
+    @Override
+    public void onDestroy() {
+        DELEGATE.onDestroy();
+        super.onDestroy();
+    }
+
+    /****************************************以下为可选方法(Optional methods)******************************************************/
+
+    /**
+     * 隐藏软键盘
+     */
+    protected void hideSoftInput() {
+        DELEGATE.hideSoftInput();
+    }
+
+    /**
+     * 显示软键盘,调用该方法后,会在onPause时自动隐藏软键盘
+     */
+    protected void showSoftInput(final View view) {
+        DELEGATE.showSoftInput(view);
+    }
+
+    public void start(ISupportFragment toFragment) {
+        DELEGATE.start(toFragment);
+    }
+
+    /**
+     * @param launchMode Similar to Activity's LaunchMode.
+     */
+    public void start(final ISupportFragment toFragment, @LaunchMode int launchMode) {
+        DELEGATE.start(toFragment, launchMode);
+    }
+
+    /**
+     * Launch an fragment for which you would like a result when it poped.
+     */
+    public void startForResult(ISupportFragment toFragment, int requestCode) {
+        DELEGATE.startForResult(toFragment, requestCode);
+    }
+
+    /**
+     * Launch a fragment while poping self.
+     */
+    public void startWithPop(ISupportFragment toFragment) {
+        DELEGATE.startWithPop(toFragment);
+    }
+
+    public void replaceFragment(ISupportFragment toFragment, boolean addToBackStack) {
+        DELEGATE.replaceFragment(toFragment, addToBackStack);
+    }
+
+    public void pop() {
+        DELEGATE.pop();
+    }
+
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ContentFrameLayout;
+import android.view.MotionEvent;
 
 
 import com.yhw.wan.core.R;
@@ -11,6 +12,7 @@ import com.yhw.wan.core.delegates.CoreDelegate;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
+import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportActivityDelegate;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
@@ -27,6 +29,8 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.common_black));
+//        StatusBarCompat.translucentStatusBar(this, false);
         DELEGATE.onCreate(savedInstanceState);
         initContainer(savedInstanceState);
     }
@@ -82,4 +86,28 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
     public void onBackPressed() {
         DELEGATE.onBackPressed();
     }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        DELEGATE.onPostCreate(savedInstanceState);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return DELEGATE.dispatchTouchEvent(ev) || super.dispatchTouchEvent(ev);
+    }
+
+    public void start(ISupportFragment toFragment) {
+        DELEGATE.start(toFragment);
+    }
+
+    public void start(ISupportFragment toFragment, @ISupportFragment.LaunchMode int launchMode) {
+        DELEGATE.start(toFragment, launchMode);
+    }
+
+    public void pop() {
+        DELEGATE.pop();
+    }
+
 }

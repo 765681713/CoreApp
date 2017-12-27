@@ -18,6 +18,7 @@ import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.adapter.Delegate1Adapter;
 import com.yhw.wan.coreapp.adapter.Delegate1Converter;
 import com.yhw.wan.coreapp.common.Constants;
+import com.yhw.wan.coreapp.main.setting.Setting2Delegate;
 import com.yhw.wan.coreapp.main.setting.SettingDelegate;
 import com.yhw.wan.ui.recycler.BaseDecoration;
 import com.yhw.wan.ui.recycler.MultipleItemEntity;
@@ -78,7 +79,11 @@ public class Delegate1 extends BottomItemDelegate {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                getParentDelegate().getSupportDelegate().start(new SettingDelegate());
+                if (position < 3) {
+                    getParentDelegate().getSupportDelegate().start(new SettingDelegate());
+                } else {
+                    getParentDelegate().getSupportDelegate().start(new Setting2Delegate());
+                }
             }
         });
         mAdapter = Delegate1Adapter.create(datas);
