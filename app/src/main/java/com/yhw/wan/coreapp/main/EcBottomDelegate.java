@@ -1,11 +1,14 @@
 package com.yhw.wan.coreapp.main;
 
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.yhw.wan.core.delegates.bottom.BaseBottomDelegate;
 import com.yhw.wan.core.delegates.bottom.BottomItemDelegate;
 import com.yhw.wan.core.delegates.bottom.BottomTabBean;
 import com.yhw.wan.core.delegates.bottom.ItemBuilder;
+import com.yhw.wan.core.utils.StatusBarUtils;
 import com.yhw.wan.coreapp.main.delegates.Delegate1;
 import com.yhw.wan.coreapp.main.delegates.Delegate2;
 import com.yhw.wan.coreapp.main.delegates.Delegate3;
@@ -27,6 +30,19 @@ public class EcBottomDelegate extends BaseBottomDelegate {
         items.put(new BottomTabBean("{fa-compass}", "Delegate3"), new Delegate3());
         items.put(new BottomTabBean("{fa-shopping-cart}", "Delegate4"), new Delegate4());
         return builder.addItems(items).build();
+    }
+
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
+        if (getView() != null) {
+            getView().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    StatusBarUtils.showStatusBar(getProxyActivity().getWindow());
+                }
+            }, 250);
+        }
     }
 
     @Override

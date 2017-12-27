@@ -7,8 +7,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
-import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.core.app.CorePreference;
+import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.core.utils.StatusBarUtils;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.main.EcBottomDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
@@ -65,9 +66,9 @@ public class LauncherDelegate extends CoreDelegate {
     //判断是否显示滑动启动页
     private void checkIsShowScroll() {
         if (!CorePreference.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())) {
-            getSupportDelegate().start(new LauncherScrollDelegate(), SINGLETASK);
+            getSupportDelegate().startWithPop(new LauncherScrollDelegate());
         } else {
-            getSupportDelegate().start(new EcBottomDelegate(), SINGLETASK);
+            getSupportDelegate().startWithPop(new EcBottomDelegate());
             if (mILauncherListener != null) {
                 mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
             }
@@ -108,4 +109,14 @@ public class LauncherDelegate extends CoreDelegate {
                 });
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        StatusBarUtils.hideStatusBar(getProxyActivity().getWindow());
+    }
+
+    @Override
+    public boolean onBackPressedSupport() {
+        return true;
+    }
 }

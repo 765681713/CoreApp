@@ -1,5 +1,8 @@
 package com.yhw.wan.core.delegates;
 
+import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
+import me.yokeyword.fragmentation.anim.FragmentAnimator;
+
 /**
  * Created by 傅令杰 on 2017/4/2
  */
@@ -11,4 +14,8 @@ public abstract class CoreDelegate extends BaseDelegate {
         return (T) getParentFragment();
     }
 
+    @Override
+    public FragmentAnimator onCreateFragmentAnimator() {
+        return new DefaultHorizontalAnimator();
+    }
 }

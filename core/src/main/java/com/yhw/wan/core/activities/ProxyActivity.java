@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ContentFrameLayout;
 import android.view.MotionEvent;
 
-
 import com.yhw.wan.core.R;
 import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.core.utils.StatusBarUtils;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
@@ -29,8 +29,7 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.common_black));
-//        StatusBarCompat.translucentStatusBar(this, false);
+        StatusBarUtils.setWhiteStatusBar(this);
         DELEGATE.onCreate(savedInstanceState);
         initContainer(savedInstanceState);
     }

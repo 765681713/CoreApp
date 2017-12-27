@@ -7,19 +7,10 @@ import android.support.v7.app.ActionBar;
 import com.yhw.wan.core.activities.ProxyActivity;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.delegates.CoreDelegate;
-import com.yhw.wan.core.utils.CoreLogger;
 import com.yhw.wan.coreapp.main.launcher.LauncherDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
 import com.yhw.wan.ui.utils.RxBus;
-import com.yhw.wan.ui.utils.RxBusMsg;
-
-import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements
         ILauncherListener {
