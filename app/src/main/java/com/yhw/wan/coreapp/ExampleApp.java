@@ -1,10 +1,9 @@
 package com.yhw.wan.coreapp;
 
 
-import android.support.multidex.MultiDexApplication;
-
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yhw.wan.core.app.Core;
+import com.yhw.wan.core.app.LeakCanaryApplication;
 import com.yhw.wan.core.net.interceptors.DebugInterceptor;
 import com.yhw.wan.coreapp.utils.event.ShareEvent;
 import com.yhw.wan.coreapp.utils.event.TestEvent;
@@ -14,7 +13,7 @@ import com.yhw.wan.coreapp.utils.icon.FontEcModule;
  * Created by jieku02 on 2017/12/19.
  */
 
-public class ExampleApp extends MultiDexApplication {
+public class ExampleApp extends LeakCanaryApplication {
 
     @Override
     public void onCreate() {
