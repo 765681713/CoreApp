@@ -10,7 +10,6 @@ import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.coreapp.main.launcher.LauncherDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
-import com.yhw.wan.ui.utils.RxBus;
 
 public class ExampleActivity extends ProxyActivity implements
         ILauncherListener {
@@ -94,7 +93,8 @@ public class ExampleActivity extends ProxyActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RxBus.getInstance().unregisterAll();
+//        RxBus.getInstance().unregisterAll();
+        Core.getConfigurator().rmActivity();
     }
 
 

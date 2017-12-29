@@ -32,6 +32,4 @@ public final class Core {
         return getConfiguration(ConfigKeys.HANDLER);
     }
 
-    public static void test(){
-    }
 }

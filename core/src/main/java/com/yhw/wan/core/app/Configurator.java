@@ -104,6 +104,11 @@ public final class Configurator {
         return this;
     }
 
+    public final Configurator rmActivity() {
+        LATTE_CONFIGS.remove(ConfigKeys.ACTIVITY);
+        return this;
+    }
+
     public Configurator withJavascriptInterface(@NonNull String name) {
         LATTE_CONFIGS.put(ConfigKeys.JAVASCRIPT_INTERFACE, name);
         return this;
