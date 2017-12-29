@@ -5,4 +5,7 @@ package com.yhw.wan.coreapp.utils;
  */
 
 public class Utils {
+
+
+
 }

@@ -36,7 +36,7 @@ public abstract class RefreshListDelegate extends CoreDelegate implements OnRefr
     @BindView(R2.id.recycler_view)
     RecyclerView mRecyclerView = null;
 
-    private ArrayList<MultipleItemEntity> datas;
+    private ArrayList<MultipleItemEntity> mData;
     private int mCurrentPage = 1;
     private MultipleRecyclerAdapter mAdapter = null;
 
@@ -56,17 +56,17 @@ public abstract class RefreshListDelegate extends CoreDelegate implements OnRefr
         mRefreshLayout.setDisableContentWhenLoading(true);//是否在加载的时候禁止列表的操作
         mRefreshLayout.setOnRefreshListener(this);
         mRefreshLayout.setOnLoadmoreListener(this);
-        datas = new ArrayList<>();
+        mData = new ArrayList<>();
         mRecyclerView.setLayoutManager(getLayoutManager());
         mRecyclerView.addItemDecoration(BaseDecoration.create(
                 ContextCompat.getColor(getContext(), R.color.app_background), 2));
         mRecyclerView.addOnItemTouchListener(new RecyclerItemListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                RefreshListDelegate.this.onItemClick(view, position, datas);
+                RefreshListDelegate.this.onItemClick(view, position, mData);
             }
         });
-        mAdapter = getAdapter(datas);
+        mAdapter = getAdapter(mData);
         mRecyclerView.setAdapter(mAdapter);
         initView();
         refreshData();
@@ -91,8 +91,8 @@ public abstract class RefreshListDelegate extends CoreDelegate implements OnRefr
             mRefreshLayout.finishRefresh(2000);
             return;
         }
-        datas.clear();
-        datas.addAll(list);
+        mData.clear();
+        mData.addAll(list);
         mAdapter.notifyDataSetChanged();
         mRefreshLayout.finishRefresh(2000);
     }
@@ -102,7 +102,7 @@ public abstract class RefreshListDelegate extends CoreDelegate implements OnRefr
             mRefreshLayout.finishLoadmore(2000);
             return;
         }
-        datas.addAll(list);
+        mData.addAll(list);
         mAdapter.notifyDataSetChanged();
         mRefreshLayout.finishLoadmore(2000);
     }

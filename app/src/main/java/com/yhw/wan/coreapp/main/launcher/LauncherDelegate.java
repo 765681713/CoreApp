@@ -22,9 +22,10 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.reactivex.Observable;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
 
@@ -36,6 +37,7 @@ public class LauncherDelegate extends CoreDelegate {
 
     @BindView(R.id.tv_launcher_timer)
     AppCompatTextView mTvTimer = null;
+    private Disposable mDisposable;
 
     private int mCount = 3;
     private ILauncherListener mILauncherListener = null;
@@ -78,7 +80,7 @@ public class LauncherDelegate extends CoreDelegate {
     //倒计时
     public void intervalTime() {
         //倒计时
-        Observable.interval(0, 1, TimeUnit.SECONDS)//设置0延迟，每隔一秒发送一条数据
+        mDisposable = Observable.interval(0, 1, TimeUnit.SECONDS)//设置0延迟，每隔一秒发送一条数据
                 .take(mCount + 1)
                 .map(new Function<Long, Long>() {
                     @Override
@@ -87,32 +89,37 @@ public class LauncherDelegate extends CoreDelegate {
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())//操作UI主要在UI线程
-                .subscribe(new Observer<Long>() {
+                .subscribe(new Consumer<Long>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
+                    public void accept(Long aLong) throws Exception {
+                        mTvTimer.setText(MessageFormat.format("跳过\n{0}s", aLong));
                     }
-
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void onNext(Long value) {
-                        mTvTimer.setText(MessageFormat.format("跳过\n{0}s", value));
+                    public void accept(Throwable throwable) throws Exception {
+                        throwable.printStackTrace();
                     }
-
+                }, new Action() {
                     @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
+                    public void run() throws Exception {
                         checkIsShowScroll();
                     }
                 });
+
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarUtils.hideStatusBar(getProxyActivity().getWindow());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (!mDisposable.isDisposed()) {
+            mDisposable.dispose();
+        }
     }
 
     @Override
