@@ -5,13 +5,10 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <ScrollView
+        style="@style/noShadowStyle"
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:overScrollMode="never">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 
 </com.scwang.smartrefresh.layout.SmartRefreshLayout>

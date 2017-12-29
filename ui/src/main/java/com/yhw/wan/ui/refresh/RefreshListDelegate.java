@@ -9,9 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.lcodecore.tkrefreshlayout.header.progresslayout.ProgressLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.ui.R;
 import com.yhw.wan.ui.R2;
@@ -29,10 +29,10 @@ import butterknife.BindView;
  * Created by jieku02 on 2017/12/25.
  */
 
-public abstract class RefreshListDelegate extends CoreDelegate {
+public abstract class RefreshListDelegate extends CoreDelegate implements OnRefreshListener, OnLoadmoreListener {
 
     @BindView(R2.id.refresh_layout)
-    TwinklingRefreshLayout mRefreshLayout = null;
+    RefreshLayout mRefreshLayout = null;
     @BindView(R2.id.recycler_view)
     RecyclerView mRecyclerView = null;
 
@@ -48,22 +48,15 @@ public abstract class RefreshListDelegate extends CoreDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         hideTitleBar();
+        mRefreshLayout.setPrimaryColorsId(R.color.color_029ff1, R.color.common_white);//全局设置主题颜色
+        mRefreshLayout.setEnableRefresh(true);//是否启用下拉刷新功能
+        mRefreshLayout.setEnableLoadmore(true);//是否启用上拉加载功能
+//        mRefreshLayout.setEnableLoadmoreWhenContentNotFull(false);//是否在列表不满一页时候开启上拉加载功能
+        mRefreshLayout.setDisableContentWhenRefresh(true);//是否在刷新的时候禁止列表的操作
+        mRefreshLayout.setDisableContentWhenLoading(true);//是否在加载的时候禁止列表的操作
+        mRefreshLayout.setOnRefreshListener(this);
+        mRefreshLayout.setOnLoadmoreListener(this);
         datas = new ArrayList<>();
-        ProgressLayout headerView = new ProgressLayout(getContext());
-        mRefreshLayout.setHeaderView(headerView);
-        mRefreshLayout.setMaxHeadHeight(140);
-        mRefreshLayout.setOverScrollBottomShow(false);
-        mRefreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
-            @Override
-            public void onRefresh(TwinklingRefreshLayout refreshLayout) {
-                refreshData();
-            }
-
-            @Override
-            public void onLoadMore(TwinklingRefreshLayout refreshLayout) {
-                loadMoreData();
-            }
-        });
         mRecyclerView.setLayoutManager(getLayoutManager());
         mRecyclerView.addItemDecoration(BaseDecoration.create(
                 ContextCompat.getColor(getContext(), R.color.app_background), 2));
@@ -95,23 +88,23 @@ public abstract class RefreshListDelegate extends CoreDelegate {
 
     protected void onRefreshFinish(List<MultipleItemEntity> list) {
         if (list == null || list.isEmpty()) {
-            mRefreshLayout.finishRefreshing();
+            mRefreshLayout.finishRefresh(2000);
             return;
         }
         datas.clear();
         datas.addAll(list);
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishRefreshing();
+        mRefreshLayout.finishRefresh(2000);
     }
 
     protected void onLoadMoreFinish(List<MultipleItemEntity> list) {
         if (list == null || list.isEmpty()) {
-            mRefreshLayout.finishLoadmore();
+            mRefreshLayout.finishLoadmore(2000);
             return;
         }
         datas.addAll(list);
         mAdapter.notifyDataSetChanged();
-        mRefreshLayout.finishLoadmore();
+        mRefreshLayout.finishLoadmore(2000);
     }
 
     protected abstract void loadData(int page, boolean isRefresh);
@@ -122,4 +115,13 @@ public abstract class RefreshListDelegate extends CoreDelegate {
 
     protected abstract void onItemClick(View view, int position, List<MultipleItemEntity> data);
 
+    @Override
+    public void onRefresh(RefreshLayout refreshlayout) {
+        refreshData();
+    }
+
+    @Override
+    public void onLoadmore(RefreshLayout refreshlayout) {
+        loadMoreData();
+    }
 }
