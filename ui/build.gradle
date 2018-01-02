@@ -31,6 +31,7 @@ dependencies {
     //RecyclerView依赖
     compile 'com.android.support:recyclerview-v7:27.0.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //compile 'jp.wasabeef:recyclerview-animators:2.2.7'
     //RecyclerView 分割线
     compile 'com.choices.divider:RecyclerView_Divider:1.0.0'
     //图片处理(升级后会出错)
