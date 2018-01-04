@@ -38,6 +38,8 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.0.0'
     compile 'com.github.bumptech.glide:okhttp3-integration:4.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    //Crop,CropCircle,CropSquare,RoundedCorners,ColorFilter,Grayscale,Blur,Mask
+    //compile 'jp.wasabeef:glide-transformations:3.0.1'
     //Banner依赖
     compile 'com.bigkoo:convenientbanner:2.0.5'
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'

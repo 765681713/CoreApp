@@ -75,6 +75,7 @@ dependencies {
     //动态权限处理
     compile 'com.github.hotchemi:permissionsdispatcher:2.4.0'
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+    //compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
     //图片剪裁
     compile 'com.github.yalantis:ucrop:2.2.1-native'
     //微信依赖（包含统计）
