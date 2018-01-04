@@ -55,5 +55,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //Material Dialog
     compile 'com.afollestad.material-dialogs:core:0.9.6.0'
+    //AnimatedSvgView
+    compile 'com.jaredrummler:animated-svg-view:1.0.5'
     compile project(':core')
 }

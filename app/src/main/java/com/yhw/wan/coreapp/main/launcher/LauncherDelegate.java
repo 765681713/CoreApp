@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
+import com.jaredrummler.android.widget.AnimatedSvgView;
 import com.yhw.wan.core.app.CorePreference;
 import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.core.utils.StatusBarUtils;
@@ -15,6 +16,7 @@ import com.yhw.wan.coreapp.main.EcBottomDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
 import com.yhw.wan.ui.launcher.ScrollLauncherTag;
+import com.yhw.wan.ui.utils.ModelSVG;
 
 import java.text.MessageFormat;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +40,9 @@ public class LauncherDelegate extends CoreDelegate {
     @BindView(R.id.tv_launcher_timer)
     AppCompatTextView mTvTimer = null;
     private Disposable mDisposable;
+
+    @BindView(R.id.tv_launcher_svg)
+    AnimatedSvgView mSvgView;
 
     private int mCount = 3;
     private ILauncherListener mILauncherListener = null;
@@ -63,6 +68,14 @@ public class LauncherDelegate extends CoreDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         intervalTime();
+        ModelSVG modelSvg = ModelSVG.values()[4];
+        mSvgView.setGlyphStrings(modelSvg.glyphs);
+        mSvgView.setFillColors(modelSvg.colors);
+        mSvgView.setViewportSize(modelSvg.width, modelSvg.height);
+        mSvgView.setTraceResidueColor(0x32000000);
+        mSvgView.setTraceColors(modelSvg.colors);
+        mSvgView.rebuildGlyphData();
+        mSvgView.start();
     }
 
     //判断是否显示滑动启动页

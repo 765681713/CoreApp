@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/launcher_00">
@@ -18,4 +19,18 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
+
+    <com.jaredrummler.android.widget.AnimatedSvgView
+        android:id="@+id/tv_launcher_svg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:animatedSvgFillStart="1200"
+        app:animatedSvgFillTime="1000"
+        app:animatedSvgImageSizeX="400"
+        app:animatedSvgImageSizeY="400"
+        app:animatedSvgTraceTime="2000"
+        app:animatedSvgTraceTimePerGlyph="1000" />
+
 </RelativeLayout>
