@@ -7,7 +7,9 @@ import android.view.View;
 
 import com.yhw.wan.core.delegates.bottom.BottomItemDelegate;
 import com.yhw.wan.coreapp.R;
+import com.yhw.wan.coreapp.main.setting.Setting2Delegate;
 import com.yhw.wan.coreapp.main.setting.Setting3Delegate;
+import com.yhw.wan.coreapp.main.setting.Setting4Delegate;
 import com.yhw.wan.coreapp.main.setting.SettingDelegate;
 
 import butterknife.OnClick;
@@ -28,6 +30,15 @@ public class Delegate1 extends BottomItemDelegate {
         getParentDelegate().getSupportDelegate().start(new Setting3Delegate());
     }
 
+    @OnClick(R.id.textView4)
+    void onTv3Click() {
+        getParentDelegate().getSupportDelegate().start(new Setting2Delegate());
+    }
+
+    @OnClick(R.id.textView5)
+    void onTv4Click() {
+        getParentDelegate().getSupportDelegate().start(new Setting4Delegate());
+    }
 
     @Override
     public Object setLayout() {

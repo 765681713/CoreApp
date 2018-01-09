@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 
 import com.yhw.wan.core.R;
 import com.yhw.wan.core.delegates.CoreDelegate;
+import com.yhw.wan.core.ui.loader.CoreLoader;
 import com.yhw.wan.core.utils.StatusBarUtils;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
@@ -45,6 +46,7 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
 
     @Override
     protected void onDestroy() {
+        CoreLoader.destroy();
         DELEGATE.onDestroy();
         super.onDestroy();
         System.gc();

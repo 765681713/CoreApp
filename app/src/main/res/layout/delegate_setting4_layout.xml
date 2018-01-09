@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_5"
-        android:background="@color/color_ff50b0"
-        android:gravity="center"
-        android:text="TextView" />
+        android:text="Button" />
 </FrameLayout>
