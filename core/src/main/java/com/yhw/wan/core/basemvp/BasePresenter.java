@@ -8,9 +8,9 @@ import java.lang.ref.WeakReference;
 
 public abstract class BasePresenter<M, V> {
     protected M mModel;
-    protected WeakReference<V> mViewRef;
+    private WeakReference<V> mViewRef;
 
-    protected void onAttach(M model, V view) {
+    void onAttach(M model, V view) {
         mModel = model;
         mViewRef = new WeakReference<>(view);
     }
@@ -19,11 +19,11 @@ public abstract class BasePresenter<M, V> {
         return isViewAttached() ? mViewRef.get() : null;
     }
 
-    protected boolean isViewAttached() {
+    private boolean isViewAttached() {
         return null != mViewRef && null != mViewRef.get();
     }
 
-    protected void onDetach() {
+    void onDetach() {
         if (null != mViewRef) {
             mViewRef.clear();
             mViewRef = null;

@@ -16,13 +16,11 @@ import java.lang.reflect.ParameterizedType;
 
 public abstract class BaseMVPDelegate<T extends BasePresenter, M extends BaseModel> extends CoreDelegate {
     protected T mPresenter;
-    protected M mModel;
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         mPresenter = getTInstance(0);
-        mModel = getTInstance(1);
-        mPresenter.onAttach(mModel, this);
+        mPresenter.onAttach(getTInstance(1), this);
     }
 
     @Override
@@ -39,9 +37,9 @@ public abstract class BaseMVPDelegate<T extends BasePresenter, M extends BaseMod
         mPresenter.onDetach();
     }
 
-    private  <T> T getTInstance(int i) {
+    private <T> T getTInstance(int i) {
         try {
-            return ((Class<T>) ((ParameterizedType)(getClass().getGenericSuperclass()))
+            return ((Class<T>) ((ParameterizedType) (getClass().getGenericSuperclass()))
                     .getActualTypeArguments()[i]).newInstance();
         } catch (Exception e) {
             e.printStackTrace();

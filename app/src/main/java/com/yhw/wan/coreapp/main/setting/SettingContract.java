@@ -23,6 +23,8 @@ public interface SettingContract {
 
     abstract class SettingPresenter extends BasePresenter<SettingModel, SettingView> {
         protected abstract void loadData(String url);
+
+        protected abstract void loadData2(String url);
     }
 
 }

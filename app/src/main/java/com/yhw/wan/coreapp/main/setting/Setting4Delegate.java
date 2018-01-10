@@ -53,11 +53,11 @@ public class Setting4Delegate extends BaseMVPDelegate<SettingPresenter, SettingM
             public void run() {
                 CoreLoader.stopLoading();
             }
-        }, 5000);
+        }, 2000);
     }
 
     @Override
     public void showError() {
-
+        mButton.setText("123456789");
     }
 }
