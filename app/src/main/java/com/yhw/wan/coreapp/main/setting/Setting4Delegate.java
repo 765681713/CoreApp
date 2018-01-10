@@ -53,7 +53,7 @@ public class Setting4Delegate extends BaseMVPDelegate<SettingPresenter, SettingM
             public void run() {
                 CoreLoader.stopLoading();
             }
-        }, 1000);
+        }, 5000);
     }
 
     @Override
