@@ -1,11 +1,9 @@
 package com.yhw.wan.core.delegates.web.client;
 
 import android.graphics.Bitmap;
-import android.os.Handler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.delegates.IPageLoadListener;
 import com.yhw.wan.core.delegates.web.WebDelegate;
 import com.yhw.wan.core.delegates.web.route.Router;
@@ -20,7 +18,6 @@ public class WebViewClientImpl extends WebViewClient {
 
     private final WebDelegate DELEGATE;
     private IPageLoadListener mIPageLoadListener = null;
-    private static final Handler HANDLER = Core.getHandler();
 
     public void setPageLoadListener(IPageLoadListener listener) {
         this.mIPageLoadListener = listener;
@@ -32,7 +29,7 @@ public class WebViewClientImpl extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        CoreLogger.d("shouldOverrideUrlLoading", url);
+        CoreLogger.w("shouldOverrideUrlLoading", url);
         return Router.getInstance().handleWebUrl(DELEGATE, url);
     }
 
@@ -42,7 +39,7 @@ public class WebViewClientImpl extends WebViewClient {
         if (mIPageLoadListener != null) {
             mIPageLoadListener.onLoadStart();
         }
-        CoreLoader.showLoading(view.getContext());
+//        CoreLoader.showLoading(view.getContext());
     }
 
     @Override
@@ -51,11 +48,7 @@ public class WebViewClientImpl extends WebViewClient {
         if (mIPageLoadListener != null) {
             mIPageLoadListener.onLoadEnd();
         }
-        HANDLER.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                CoreLoader.stopLoading();
-            }
-        }, 1000);
+//        CoreLoader.stopLoading();
     }
+
 }

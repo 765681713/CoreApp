@@ -30,6 +30,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //ButterKnife解释器
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //Jsoup解析Html
+    compile 'org.jsoup:jsoup:1.11.2'
     compile project(':ui')
     implementation project(':annotations')
     annotationProcessor project(':compiler')

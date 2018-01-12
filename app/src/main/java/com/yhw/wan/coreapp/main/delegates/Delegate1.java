@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.yhw.wan.core.delegates.bottom.BottomItemDelegate;
+import com.yhw.wan.core.delegates.web.WebDelegateImpl;
 import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.main.setting.Setting2Delegate;
 import com.yhw.wan.coreapp.main.setting.Setting3Delegate;
@@ -38,6 +39,11 @@ public class Delegate1 extends BottomItemDelegate {
     @OnClick(R.id.textView5)
     void onTv4Click() {
         getParentDelegate().getSupportDelegate().start(new Setting4Delegate());
+    }
+
+    @OnClick(R.id.textView6)
+    void onTv5Click() {
+        getParentDelegate().getSupportDelegate().start(WebDelegateImpl.create("http://www.gghypt.net/"));
     }
 
     @Override
