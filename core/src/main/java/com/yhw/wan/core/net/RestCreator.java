@@ -1,6 +1,7 @@
 package com.yhw.wan.core.net;
 
 
+import com.readystatesoftware.chuck.ChuckInterceptor;
 import com.yhw.wan.core.app.ConfigKeys;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.net.rx.RxRestService;
@@ -40,6 +41,7 @@ public final class RestCreator {
         private static final ArrayList<Interceptor> INTERCEPTORS = Core.getConfiguration(ConfigKeys.INTERCEPTOR);
 
         private static OkHttpClient.Builder addInterceptor() {
+            BUILDER.addInterceptor(new ChuckInterceptor(Core.getApplicationContext()));
             if (INTERCEPTORS != null && !INTERCEPTORS.isEmpty()) {
                 for (Interceptor interceptor : INTERCEPTORS) {
                     BUILDER.addInterceptor(interceptor);
