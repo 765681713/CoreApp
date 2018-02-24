@@ -12,10 +12,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.webkit.MimeTypeMap;
 import android.widget.TextView;
 
 
+import com.yhw.wan.core.BuildConfig;
 import com.yhw.wan.core.app.Core;
 
 import java.io.BufferedInputStream;
@@ -365,5 +367,20 @@ public final class FileUtil {
             }
         }
         return data;
+    }
+
+    /**
+     * 根据文件转换成对应的Uri
+     *
+     * @param ctx
+     * @param file
+     * @return
+     */
+    public static Uri file2Uri(Context ctx, File file) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return FileProvider.getUriForFile(ctx, BuildConfig.APPLICATION_ID + ".fileprovider", file);
+        } else {
+            return Uri.fromFile(file);
+        }
     }
 }

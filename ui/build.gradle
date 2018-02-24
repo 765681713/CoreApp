@@ -57,5 +57,7 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.9.6.0'
     //AnimatedSvgView
     compile 'com.jaredrummler:animated-svg-view:1.0.5'
+    //takephoto 拍照
+//    compile 'com.jph.takephoto:takephoto_library:4.0.3'
     compile project(':core')
 }
