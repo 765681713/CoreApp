@@ -51,6 +51,9 @@ public final class FileUtil {
     //网页缓存地址
     public static final String WEB_CACHE_DIR =
             Environment.getExternalStorageDirectory().getPath() + "/app_web_cache/";
+    //app 外部缓存位置
+    public static final String APP_CACHE_DIR =
+            Environment.getExternalStorageDirectory().getPath() + "/core_app_cache/";
 
     //系统相机目录
     public static final String CAMERA_PHOTO_DIR =

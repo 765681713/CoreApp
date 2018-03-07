@@ -5,6 +5,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.app.LeakCanaryApplication;
 import com.yhw.wan.core.net.interceptors.DebugInterceptor;
+import com.yhw.wan.coreapp.utils.crash.CrashHandler;
 import com.yhw.wan.coreapp.utils.event.ShareEvent;
 import com.yhw.wan.coreapp.utils.event.TestEvent;
 import com.yhw.wan.coreapp.utils.icon.FontEcModule;
@@ -30,7 +31,8 @@ public class ExampleApp extends LeakCanaryApplication {
                 .withWebEvent("test", new TestEvent())
                 .withWebEvent("share", new ShareEvent())
                 .configure();
-
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(this);
     }
 
 
