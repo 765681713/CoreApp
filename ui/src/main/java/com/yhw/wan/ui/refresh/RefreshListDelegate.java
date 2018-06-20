@@ -26,7 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by jieku02 on 2017/12/25.
+ * Created by BYDeXL on 2017/12/25.
  */
 
 public abstract class RefreshListDelegate extends CoreDelegate implements OnRefreshListener, OnLoadmoreListener {

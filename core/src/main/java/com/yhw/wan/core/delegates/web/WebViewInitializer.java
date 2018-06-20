@@ -6,7 +6,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class WebViewInitializer {

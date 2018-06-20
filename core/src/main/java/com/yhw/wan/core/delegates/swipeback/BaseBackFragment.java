@@ -20,7 +20,7 @@ import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 
 /**
- * Created by YoKeyword on 16/2/7.
+ * Created by 刘世波 on 16/2/7.
  */
 public abstract class BaseBackFragment extends SwipeBackFragment {
     private View baseView;

@@ -1,7 +1,7 @@
 package com.yhw.wan.core.delegates.bottom;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public final class BottomTabBean {

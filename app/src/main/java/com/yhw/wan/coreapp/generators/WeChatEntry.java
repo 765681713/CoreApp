@@ -5,7 +5,7 @@ import com.yhw.wan.annotations.EntryGenerator;
 import com.yhw.wan.core.wechat.templates.WXEntryTemplate;
 
 /**
- * Created by 傅令杰 on 2017/4/22
+ * Created by 刘世波 on 2017/4/22
  */
 
 @SuppressWarnings("unused")

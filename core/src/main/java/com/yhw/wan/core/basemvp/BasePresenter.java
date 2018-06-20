@@ -3,7 +3,7 @@ package com.yhw.wan.core.basemvp;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by jieku02 on 2018/1/9.
+ * Created by BYDeXL on 2018/1/9.
  */
 
 public abstract class BasePresenter<M, V> {

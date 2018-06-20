@@ -1,7 +1,7 @@
 package com.yhw.wan.ui.recycler;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class ItemType {

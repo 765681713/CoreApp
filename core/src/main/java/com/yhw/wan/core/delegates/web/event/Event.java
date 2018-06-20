@@ -8,7 +8,7 @@ import com.yhw.wan.core.delegates.web.WebDelegate;
 
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public abstract class Event implements IEvent {

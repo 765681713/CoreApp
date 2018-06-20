@@ -20,7 +20,7 @@ import com.yhw.wan.ui.launcher.ScrollLauncherTag;
 import java.util.ArrayList;
 
 /**
- * Created by 傅令杰 on 2017/4/22
+ * Created by 刘世波 on 2017/4/22
  */
 
 public class LauncherScrollDelegate extends CoreDelegate implements OnItemClickListener {

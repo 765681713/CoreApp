@@ -12,7 +12,7 @@ import com.yhw.wan.ui.recycler.MultipleItemEntity;
 import java.util.ArrayList;
 
 /**
- * Created by jieku02 on 2017/12/21.
+ * Created by BYDeXL on 2017/12/21.
  */
 
 public class Delegate1Converter extends DataConverter {

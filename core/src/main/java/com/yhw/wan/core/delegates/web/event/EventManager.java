@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import java.util.HashMap;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class EventManager {

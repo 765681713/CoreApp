@@ -12,7 +12,7 @@ import com.yhw.wan.core.net.callback.ISuccess;
 import com.yhw.wan.core.utils.CoreLogger;
 
 /**
- * Created by 傅令杰 on 2017/4/25
+ * Created by 刘世波 on 2017/4/25
  */
 
 public abstract class BaseWXEntryActivity extends BaseWXActivity {

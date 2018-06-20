@@ -21,7 +21,7 @@ import com.yhw.wan.core.utils.FileUtil;
 import java.io.File;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  * 照片处理类
  */
 

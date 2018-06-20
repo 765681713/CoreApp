@@ -8,7 +8,7 @@ import com.yhw.wan.ui.recycler.MultipleItemEntity;
 import java.util.List;
 
 /**
- * Created by jieku02 on 2018/1/9.
+ * Created by BYDeXL on 2018/1/9.
  */
 
 public interface SettingContract {

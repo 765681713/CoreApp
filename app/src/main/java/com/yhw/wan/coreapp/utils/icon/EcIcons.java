@@ -3,7 +3,7 @@ package com.yhw.wan.coreapp.utils.icon;
 import com.joanzapata.iconify.Icon;
 
 /**
- * Created by 傅令杰 on 2017/3/29
+ * Created by 刘世波 on 2017/3/29
  */
 
 public enum EcIcons implements Icon {

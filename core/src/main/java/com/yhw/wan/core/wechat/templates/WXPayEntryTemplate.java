@@ -6,7 +6,7 @@ import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.yhw.wan.core.wechat.BaseWXPayEntryActivity;
 
 /**
- * Created by 傅令杰 on 2017/1/2
+ * Created by 刘世波 on 2017/1/2
  */
 
 public class WXPayEntryTemplate extends BaseWXPayEntryActivity {

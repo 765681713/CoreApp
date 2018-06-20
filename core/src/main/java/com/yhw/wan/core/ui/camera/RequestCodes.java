@@ -3,7 +3,7 @@ package com.yhw.wan.core.ui.camera;
 import com.yalantis.ucrop.UCrop;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  * 请求码存储
  */
 

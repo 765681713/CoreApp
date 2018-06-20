@@ -11,7 +11,7 @@ import com.yhw.wan.coreapp.utils.event.TestEvent;
 import com.yhw.wan.coreapp.utils.icon.FontEcModule;
 
 /**
- * Created by jieku02 on 2017/12/19.
+ * Created by BYDeXL on 2017/12/19.
  */
 
 public class ExampleApp extends LeakCanaryApplication {

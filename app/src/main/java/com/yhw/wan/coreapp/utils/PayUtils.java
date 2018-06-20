@@ -16,7 +16,7 @@ import com.yhw.wan.coreapp.R;
 import com.yhw.wan.coreapp.common.Constants;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class PayUtils implements View.OnClickListener, IAlPayResultListener {

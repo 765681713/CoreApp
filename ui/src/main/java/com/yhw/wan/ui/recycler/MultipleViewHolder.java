@@ -5,7 +5,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class MultipleViewHolder extends BaseViewHolder {

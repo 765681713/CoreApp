@@ -3,7 +3,7 @@ package com.yhw.wan.ui.banner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class HolderCreator  implements CBViewHolderCreator<ImageHolder>{

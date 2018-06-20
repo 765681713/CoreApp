@@ -11,7 +11,7 @@ import com.yhw.wan.core.delegates.CoreDelegate;
 import java.lang.reflect.ParameterizedType;
 
 /**
- * Created by jieku02 on 2018/1/9.
+ * Created by BYDeXL on 2018/1/9.
  */
 
 public abstract class BaseMVPDelegate<T extends BasePresenter, M extends BaseModel> extends CoreDelegate {

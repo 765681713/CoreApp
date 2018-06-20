@@ -1,7 +1,7 @@
 package com.yhw.wan.core.utils;
 
 /**
- * Created by jieku02 on 2017/12/29.
+ * Created by BYDeXL on 2017/12/29.
  */
 
 public class Utils {

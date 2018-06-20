@@ -4,7 +4,7 @@ package com.yhw.wan.core.delegates.web.event;
 import com.yhw.wan.core.utils.CoreLogger;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class UndefineEvent extends Event {

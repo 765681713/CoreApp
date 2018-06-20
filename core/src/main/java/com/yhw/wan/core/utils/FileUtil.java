@@ -34,7 +34,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 public final class FileUtil {
 

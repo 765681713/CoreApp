@@ -13,7 +13,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by jieku02 on 2018/1/9.
+ * Created by BYDeXL on 2018/1/9.
  */
 
 public class SettingPresenter extends SettingContract.SettingPresenter {

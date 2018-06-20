@@ -12,7 +12,7 @@ import com.yhw.wan.coreapp.R;
 
 
 /**
- * Created by jieku015 on 2016/5/24.
+ * Created by BYDeXL on 2016/5/24.
  */
 public class TipsPopWindow extends PopupWindow implements View.OnClickListener {
 

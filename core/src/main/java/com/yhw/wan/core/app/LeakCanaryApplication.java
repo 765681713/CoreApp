@@ -5,7 +5,7 @@ import android.support.multidex.MultiDexApplication;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- * Created by jieku02 on 2017/12/28.
+ * Created by BYDeXL on 2017/12/28.
  */
 
 public class LeakCanaryApplication extends MultiDexApplication {

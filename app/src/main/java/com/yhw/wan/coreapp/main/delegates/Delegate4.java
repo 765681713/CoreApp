@@ -35,7 +35,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by jieku02 on 2017/12/21.
+ * Created by BYDeXL on 2017/12/21.
  */
 
 public class Delegate4 extends BottomItemDelegate implements JCameraListener {

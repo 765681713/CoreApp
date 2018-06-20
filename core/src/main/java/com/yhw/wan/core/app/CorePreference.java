@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.yhw.wan.core.app.Core;
 
 /**
- * Created by 傅令杰 on 2017/4/22
+ * Created by 刘世波 on 2017/4/22
  */
 
 public final class CorePreference {

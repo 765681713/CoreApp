@@ -4,7 +4,7 @@ import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
- * Created by 傅令杰 on 2017/4/2
+ * Created by 刘世波 on 2017/4/2
  */
 
 public abstract class CoreBackDelegate extends BaseBackFragment {

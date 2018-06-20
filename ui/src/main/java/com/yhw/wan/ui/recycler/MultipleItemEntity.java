@@ -7,7 +7,7 @@ import java.lang.ref.SoftReference;
 import java.util.LinkedHashMap;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class MultipleItemEntity implements MultiItemEntity {

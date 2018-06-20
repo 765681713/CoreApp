@@ -4,7 +4,7 @@ import com.yhw.wan.core.delegates.web.event.Event;
 import com.yhw.wan.core.utils.CoreLogger;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class ShareEvent extends Event {

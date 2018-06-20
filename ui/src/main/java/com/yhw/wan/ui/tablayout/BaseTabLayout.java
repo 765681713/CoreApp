@@ -20,7 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by jieku02 on 2017/12/25.
+ * Created by BYDeXL on 2017/12/25.
  */
 
 public abstract class BaseTabLayout extends CoreDelegate implements

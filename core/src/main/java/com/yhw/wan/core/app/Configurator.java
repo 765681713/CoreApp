@@ -19,7 +19,7 @@ import java.util.HashMap;
 import okhttp3.Interceptor;
 
 /**
- * Created by 傅令杰 on 2017/3/29
+ * Created by 刘世波 on 2017/3/29
  */
 
 public final class Configurator {

@@ -5,7 +5,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public interface IWebViewInitializer {

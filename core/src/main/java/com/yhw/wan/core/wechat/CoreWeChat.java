@@ -10,7 +10,7 @@ import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.wechat.callbacks.IWeChatSignInCallback;
 
 /**
- * Created by 傅令杰 on 2017/4/25
+ * Created by 刘世波 on 2017/4/25
  */
 
 public class CoreWeChat {

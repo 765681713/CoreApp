@@ -8,7 +8,7 @@ import com.yhw.wan.ui.R;
 import java.util.ArrayList;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class BannerCreator {

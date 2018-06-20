@@ -4,6 +4,9 @@ package com.yhw.wan.core.wechat.templates;
 import com.yhw.wan.core.wechat.BaseWXEntryActivity;
 import com.yhw.wan.core.wechat.CoreWeChat;
 
+/**
+ * Created by 刘世波
+ */
 public class WXEntryTemplate extends BaseWXEntryActivity {
 
     @Override

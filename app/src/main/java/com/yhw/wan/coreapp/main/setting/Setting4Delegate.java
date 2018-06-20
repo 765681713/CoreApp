@@ -12,7 +12,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by jieku02 on 2018/1/9.
+ * Created by BYDeXL on 2018/1/9.
  */
 
 public class Setting4Delegate extends BaseMVPDelegate<SettingPresenter, SettingModel>

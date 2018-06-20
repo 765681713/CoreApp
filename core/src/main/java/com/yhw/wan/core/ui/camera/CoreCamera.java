@@ -7,7 +7,7 @@ import com.yhw.wan.core.utils.FileUtil;
 
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  * 照相机调用类
  */
 

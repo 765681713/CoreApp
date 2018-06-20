@@ -3,7 +3,7 @@ package com.yhw.wan.core.ui.camera;
 import android.net.Uri;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  * 存储一些中间值
  */
 

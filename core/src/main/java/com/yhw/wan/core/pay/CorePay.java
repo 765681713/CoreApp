@@ -16,7 +16,7 @@ import com.yhw.wan.core.utils.CoreLogger;
 import com.yhw.wan.core.wechat.CoreWeChat;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class CorePay {

@@ -3,7 +3,7 @@ package com.yhw.wan.ui.recycler;
 import java.util.LinkedHashMap;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class MultipleEntityBuilder {

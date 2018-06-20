@@ -1,7 +1,7 @@
 package com.yhw.wan.ui.utils;
 
 /**
- * Created by jieku02 on 2017/12/26.
+ * Created by BYDeXL on 2017/12/26.
  */
 
 public class RxBusMsg<T> {

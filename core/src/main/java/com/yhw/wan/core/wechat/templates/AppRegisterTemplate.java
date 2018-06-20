@@ -4,6 +4,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+/**
+ * Created by 刘世波
+ */
 public class AppRegisterTemplate extends BroadcastReceiver {
 
 

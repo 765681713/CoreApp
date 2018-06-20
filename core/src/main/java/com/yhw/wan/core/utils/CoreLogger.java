@@ -3,7 +3,7 @@ package com.yhw.wan.core.utils;
 import com.orhanobut.logger.Logger;
 
 /**
- * Created by 傅令杰 on 2017/4/22
+ * Created by 刘世波 on 2017/4/22
  */
 
 public final class CoreLogger {

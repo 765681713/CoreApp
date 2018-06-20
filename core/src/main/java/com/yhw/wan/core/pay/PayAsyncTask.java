@@ -8,7 +8,7 @@ import com.yhw.wan.core.ui.loader.CoreLoader;
 import com.yhw.wan.core.utils.CoreLogger;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class PayAsyncTask extends AsyncTask<String, Void, String> {

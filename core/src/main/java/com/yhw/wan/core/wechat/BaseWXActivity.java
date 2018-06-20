@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
 /**
- * Created by 傅令杰 on 2017/4/25
+ * Created by 刘世波 on 2017/4/25
  */
 
 public abstract class BaseWXActivity extends AppCompatActivity implements IWXAPIEventHandler {

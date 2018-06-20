@@ -8,7 +8,7 @@ import com.yhw.wan.core.delegates.CoreDelegate;
 
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public abstract class BottomItemDelegate extends CoreDelegate {

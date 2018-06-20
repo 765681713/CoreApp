@@ -18,7 +18,7 @@ import com.yhw.wan.ui.recycler.MultipleItemEntity;
 import butterknife.BindView;
 
 /**
- * Created by jieku02 on 2017/12/25.
+ * Created by BYDeXL on 2017/12/25.
  */
 
 public abstract class RefreshScrollDelegate extends CoreDelegate implements OnRefreshListener {

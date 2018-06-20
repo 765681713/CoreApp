@@ -11,6 +11,9 @@ import com.yhw.wan.coreapp.main.launcher.LauncherDelegate;
 import com.yhw.wan.ui.launcher.ILauncherListener;
 import com.yhw.wan.ui.launcher.OnLauncherFinishTag;
 
+/**
+ * Created by BYDeXL on 2017/12/19.
+ */
 public class ExampleActivity extends ProxyActivity implements
         ILauncherListener {
 

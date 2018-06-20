@@ -5,7 +5,7 @@ import com.yhw.wan.annotations.PayEntryGenerator;
 import com.yhw.wan.core.wechat.templates.WXPayEntryTemplate;
 
 /**
- * Created by 傅令杰 on 2017/4/22
+ * Created by 刘世波 on 2017/4/22
  */
 @SuppressWarnings("unused")
 @PayEntryGenerator(

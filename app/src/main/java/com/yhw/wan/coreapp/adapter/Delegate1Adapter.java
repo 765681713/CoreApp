@@ -10,7 +10,7 @@ import com.yhw.wan.ui.recycler.MultipleViewHolder;
 import java.util.List;
 
 /**
- * Created by jieku02 on 2017/12/21.
+ * Created by BYDeXL on 2017/12/21.
  */
 
 public class Delegate1Adapter extends MultipleRecyclerAdapter {

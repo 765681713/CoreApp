@@ -10,7 +10,7 @@ import com.yhw.wan.coreapp.R;
 
 
 /**
- * Created by jieku02 on 2017/12/21.
+ * Created by BYDeXL on 2017/12/21.
  */
 
 public class Delegate3 extends BottomItemDelegate  {

@@ -17,7 +17,7 @@ import com.yhw.wan.coreapp.main.delegates.Delegate4;
 import java.util.LinkedHashMap;
 
 /**
- * Created by 傅令杰
+ * Created by 刘世波
  */
 
 public class EcBottomDelegate extends BaseBottomDelegate {
