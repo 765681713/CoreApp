@@ -196,6 +196,11 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
     }
 
     @Override
+    public void post(Runnable runnable) {
+        DELEGATE.post(runnable);
+    }
+
+    @Override
     public void onEnterAnimationEnd(@Nullable Bundle savedInstanceState) {
         DELEGATE.onEnterAnimationEnd(savedInstanceState);
     }

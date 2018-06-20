@@ -100,5 +100,4 @@ public class ExampleActivity extends ProxyActivity implements
         Core.getConfigurator().rmActivity();
     }
 
-
 }
