@@ -3,9 +3,12 @@ package com.yhw.wan.coreapp.main.setting;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
+import com.yhw.wan.core.utils.RxLifeUtils;
 import com.yhw.wan.core.utils.callback.CallbackManager;
 import com.yhw.wan.core.utils.callback.CallbackType;
 import com.yhw.wan.core.utils.callback.IGlobalCallback;
+
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -48,6 +51,17 @@ public class SettingPresenter extends SettingContract.SettingPresenter {
                     }
                 });
         mModel.loadDaily(url);
+        Observable.just("")
+                .delay(1, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(RxLifeUtils.<String>bindToLifecycle(getView()))
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+
+                    }
+                });
     }
 
     @Override

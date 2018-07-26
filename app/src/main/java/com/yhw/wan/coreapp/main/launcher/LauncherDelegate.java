@@ -102,6 +102,7 @@ public class LauncherDelegate extends CoreDelegate {
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())//操作UI主要在UI线程
+                .compose(this.<Long>bindToLifecycle())
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {

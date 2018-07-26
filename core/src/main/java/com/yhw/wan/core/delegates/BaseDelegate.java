@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.yhw.wan.core.R;
 import com.yhw.wan.core.R2;
 import com.yhw.wan.core.activities.ProxyActivity;
@@ -31,7 +31,7 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  * Created by 刘世波 on 2017/4/2
  */
 
-public abstract class BaseDelegate extends Fragment implements ISupportFragment {
+public abstract class BaseDelegate extends RxFragment implements ISupportFragment {
 
     private final SupportFragmentDelegate DELEGATE = new SupportFragmentDelegate(this);
     protected FragmentActivity _mActivity = null;

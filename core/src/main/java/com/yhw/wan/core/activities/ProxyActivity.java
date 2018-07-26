@@ -2,10 +2,10 @@ package com.yhw.wan.core.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ContentFrameLayout;
 import android.view.MotionEvent;
 
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.yhw.wan.core.R;
 import com.yhw.wan.core.delegates.CoreDelegate;
 import com.yhw.wan.core.ui.loader.CoreLoader;
@@ -21,7 +21,7 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  * Created by 刘世波 on 2017/4/2
  */
 
-public abstract class ProxyActivity extends AppCompatActivity implements ISupportActivity {
+public abstract class ProxyActivity extends RxAppCompatActivity implements ISupportActivity {
 
     private final SupportActivityDelegate DELEGATE = new SupportActivityDelegate(this);
 
