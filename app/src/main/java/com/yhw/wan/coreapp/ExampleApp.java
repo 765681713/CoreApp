@@ -1,6 +1,9 @@
 package com.yhw.wan.coreapp;
 
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
+
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yhw.wan.core.app.Core;
 import com.yhw.wan.core.app.LeakCanaryApplication;
@@ -31,9 +34,14 @@ public class ExampleApp extends LeakCanaryApplication {
                 .withWebEvent("test", new TestEvent())
                 .withWebEvent("share", new ShareEvent())
                 .configure();
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(this);
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(this);
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
 }
